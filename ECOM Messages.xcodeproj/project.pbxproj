@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B065B28F2B59231C0047F05B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B28E2B59231C0047F05B /* MainViewController.swift */; };
+		B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B2912B5928F20047F05B /* CustomNavBar.swift */; };
 		B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824A2B58440800CD4CBF /* AppDelegate.swift */; };
 		B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */; };
 		B0B082522B58440800CD4CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B082502B58440800CD4CBF /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		B065B28E2B59231C0047F05B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B065B2912B5928F20047F05B /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		B0B082472B58440800CD4CBF /* ECOM Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECOM Messages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0824A2B58440800CD4CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				B065B28E2B59231C0047F05B /* MainViewController.swift */,
+				B065B2912B5928F20047F05B /* CustomNavBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */,
+				B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */,
 				B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */,
 				B065B28F2B59231C0047F05B /* MainViewController.swift in Sources */,
 			);
