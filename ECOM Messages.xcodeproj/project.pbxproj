@@ -37,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B065B2902B5924060047F05B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B065B28E2B59231C0047F05B /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B0B0823E2B58440800CD4CBF = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +64,13 @@
 		B0B082492B58440800CD4CBF /* ECOM Messages */ = {
 			isa = PBXGroup;
 			children = (
+				B065B2902B5924060047F05B /* View */,
 				B0B0824A2B58440800CD4CBF /* AppDelegate.swift */,
 				B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */,
 				B0B082502B58440800CD4CBF /* Main.storyboard */,
 				B0B082532B58440B00CD4CBF /* Assets.xcassets */,
 				B0B082552B58440B00CD4CBF /* LaunchScreen.storyboard */,
 				B0B082582B58440B00CD4CBF /* Info.plist */,
-				B065B28E2B59231C0047F05B /* MainViewController.swift */,
 			);
 			path = "ECOM Messages";
 			sourceTree = "<group>";
