@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2022B5A7095009FE7DC /* MessageItem.swift */; };
 		B065B28F2B59231C0047F05B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B28E2B59231C0047F05B /* MainViewController.swift */; };
 		B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B2912B5928F20047F05B /* CustomNavBar.swift */; };
 		B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824A2B58440800CD4CBF /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B01BD2022B5A7095009FE7DC /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
 		B065B28E2B59231C0047F05B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B065B2912B5928F20047F05B /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		B0B082472B58440800CD4CBF /* ECOM Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECOM Messages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B01BD2012B5A7084009FE7DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B01BD2022B5A7095009FE7DC /* MessageItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B065B2902B5924060047F05B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +77,7 @@
 		B0B082492B58440800CD4CBF /* ECOM Messages */ = {
 			isa = PBXGroup;
 			children = (
+				B01BD2012B5A7084009FE7DC /* Model */,
 				B065B2902B5924060047F05B /* View */,
 				B0B0824A2B58440800CD4CBF /* AppDelegate.swift */,
 				B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */,
@@ -149,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */,
 				B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */,
 				B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */,
 				B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */,
