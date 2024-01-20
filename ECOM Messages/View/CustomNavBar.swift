@@ -1,6 +1,5 @@
 //
 //  CustomNavBar.swift
-//  ios new project
 //
 //  Created by Soroush
 

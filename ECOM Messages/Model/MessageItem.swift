@@ -14,3 +14,5 @@ struct MessageItem: Codable {
     let uuid: String?
     let unread: Bool?
 }
+
+

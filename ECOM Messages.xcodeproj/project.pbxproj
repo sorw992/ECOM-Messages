@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2022B5A7095009FE7DC /* MessageItem.swift */; };
+		B01BD2062B5A71F6009FE7DC /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2052B5A71F6009FE7DC /* NetworkTypes.swift */; };
+		B01BD20A2B5A76E4009FE7DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */; };
+		B01BD20C2B5A76E8009FE7DC /* InteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */; };
+		B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */; };
 		B065B28F2B59231C0047F05B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B28E2B59231C0047F05B /* MainViewController.swift */; };
 		B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B2912B5928F20047F05B /* CustomNavBar.swift */; };
 		B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824A2B58440800CD4CBF /* AppDelegate.swift */; };
@@ -19,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		B01BD2022B5A7095009FE7DC /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		B01BD2052B5A71F6009FE7DC /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
+		B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageViewModel.swift; sourceTree = "<group>"; };
+		B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionManager.swift; sourceTree = "<group>"; };
 		B065B28E2B59231C0047F05B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B065B2912B5928F20047F05B /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		B0B082472B58440800CD4CBF /* ECOM Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECOM Messages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +55,31 @@
 				B01BD2022B5A7095009FE7DC /* MessageItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B01BD2042B5A71E4009FE7DC /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */,
+				B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */,
+				B01BD2052B5A71F6009FE7DC /* NetworkTypes.swift */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		B01BD2072B5A739A009FE7DC /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		B01BD20D2B5A77B7009FE7DC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B065B2902B5924060047F05B /* View */ = {
@@ -79,6 +112,9 @@
 			children = (
 				B01BD2012B5A7084009FE7DC /* Model */,
 				B065B2902B5924060047F05B /* View */,
+				B01BD2072B5A739A009FE7DC /* View Model */,
+				B01BD2042B5A71E4009FE7DC /* Network Manager */,
+				B01BD20D2B5A77B7009FE7DC /* Utilities */,
 				B0B0824A2B58440800CD4CBF /* AppDelegate.swift */,
 				B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */,
 				B0B082502B58440800CD4CBF /* Main.storyboard */,
@@ -160,10 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B01BD2062B5A71F6009FE7DC /* NetworkTypes.swift in Sources */,
 				B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */,
 				B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */,
+				B01BD20A2B5A76E4009FE7DC /* NetworkManager.swift in Sources */,
 				B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */,
+				B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */,
 				B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */,
+				B01BD20C2B5A76E8009FE7DC /* InteractionManager.swift in Sources */,
 				B065B28F2B59231C0047F05B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
