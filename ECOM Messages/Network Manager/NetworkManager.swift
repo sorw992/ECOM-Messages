@@ -40,6 +40,7 @@ class RequestManager {
 
     func requestAPI<T: Decodable>(requestType: RequestMethod.Method, urlString: String) -> AnyPublisher<T, NetworkError> {
     
+       // check for internet reachability
 
         print("URL =====>\(urlString)")
         guard let url = URL(string: urlString) else {

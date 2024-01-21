@@ -1,0 +1,6 @@
+framework module Pods_ECOM_Messages {
+  umbrella header "Pods-ECOM Messages-umbrella.h"
+
+  export *
+  module * { export * }
+}
