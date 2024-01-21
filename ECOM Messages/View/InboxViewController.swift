@@ -5,39 +5,23 @@
 //  Created by Soroush on 1/18/24.
 
 import UIKit
-import Combine
+
 
 class InboxViewController: UIViewController {
     
-    private var getMessageViewModel = GetMessageViewModel()
-    // Subject: A subject acts as a go-between to enable non-Combine imperative code to send values to Combine subscribers.
-    // PassthroughSubject: Creates an instance of a PassthroughSubject of type Void and never fail.
-    private var publisher = PassthroughSubject<Void,Never>()
-    private var subscriptions = Set<AnyCancellable>()
+    @IBOutlet weak var tableView: UITableView!
+    
+    var messages: [MessageItem]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchQuestionData()
-        publisher.send()
-        
-        
+        tableView.backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false        
         
     }
     
-    private func fetchQuestionData() {
-        getMessageViewModel.getMessagesListVM(messageData: publisher.eraseToAnyPublisher())
-        
-        getMessageViewModel.reloadMessageList
-            .sink(receiveCompletion: { data in
-                print("data100", data)
-            }) { [weak self] _ in
-                
-                //self?.questionsTableView.reloadData()
-               // print("messageData", self?.getMessageViewModel.messagesData)
-            }
-            .store(in: &subscriptions)
-    }
+    
     
     /*
     private var dataTask: URLSessionDataTask? = nil
