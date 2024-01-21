@@ -41,6 +41,7 @@ class GetMessageViewModel {
     private func prepareTableDataSource(response: [MessageItem]) {
         messagesData = response
         numberOfRows = response.count
+        print("response", response)
         
         reloadMessageDataSubject.send(.success(()))
     }

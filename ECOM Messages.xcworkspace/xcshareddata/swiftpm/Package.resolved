@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "badgegenerator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/froggomad/BadgeGenerator",
+      "state" : {
+        "revision" : "9edc24b91855b7f6b1d703be9b92fec67f1e828f",
+        "version" : "0.0.4"
+      }
+    }
+  ],
+  "version" : 2
+}

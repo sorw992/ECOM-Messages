@@ -24,6 +24,7 @@
 		B0B4B8D42B5C5CCF00717263 /* LZViewPagerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4B8D12B5C5CCF00717263 /* LZViewPagerContent.swift */; };
 		B0B4B8D62B5C609D00717263 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4B8D52B5C609D00717263 /* MainViewController.swift */; };
 		B0B4B8D82B5C660600717263 /* SavedMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */; };
+		B0DB6F1E2B5CFCB40047DDB5 /* BadgeGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = B0DB6F1D2B5CFCB40047DDB5 /* BadgeGenerator */; };
 		BE15AABA612D3590BDF46610 /* Pods_ECOM_Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EDE15912B1EE6A07E4C0BB /* Pods_ECOM_Messages.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DB6F1E2B5CFCB40047DDB5 /* BadgeGenerator in Frameworks */,
 				BE15AABA612D3590BDF46610 /* Pods_ECOM_Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +192,9 @@
 			dependencies = (
 			);
 			name = "ECOM Messages";
+			packageProductDependencies = (
+				B0DB6F1D2B5CFCB40047DDB5 /* BadgeGenerator */,
+			);
 			productName = "ECOM Messages";
 			productReference = B0B082472B58440800CD4CBF /* ECOM Messages.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +223,9 @@
 				Base,
 			);
 			mainGroup = B0B0823E2B58440800CD4CBF;
+			packageReferences = (
+				B0DB6F1C2B5CFCB40047DDB5 /* XCRemoteSwiftPackageReference "BadgeGenerator" */,
+			);
 			productRefGroup = B0B082482B58440800CD4CBF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -459,8 +467,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,8 +495,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,6 +531,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B0DB6F1C2B5CFCB40047DDB5 /* XCRemoteSwiftPackageReference "BadgeGenerator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/froggomad/BadgeGenerator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B0DB6F1D2B5CFCB40047DDB5 /* BadgeGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0DB6F1C2B5CFCB40047DDB5 /* XCRemoteSwiftPackageReference "BadgeGenerator" */;
+			productName = BadgeGenerator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0B0823F2B58440800CD4CBF /* Project object */;
 }

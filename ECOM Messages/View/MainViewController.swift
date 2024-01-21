@@ -3,7 +3,7 @@
 //
 
 import UIKit
-
+import BadgeGenerator
 
 class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerDataSource {
     
@@ -15,6 +15,8 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
     private var subControllers: [UIViewController] = []
     
     let navBar = CustomNavBar()
+    
+    var badgeLabel: BadgeLabel? = nil
     
     // MARK: Properties
     func viewPagerProperties() {
@@ -45,6 +47,11 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
      
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.backgroundColor = UIColor(red: 213/255.0, green: 246/255.0, blue: 254/255.0, alpha: 1.0)
+        
+        if index == 1 {
+            badgeLabel = button.setBadge(in: .northWest, with: "1")
+            badgeLabel?.textColor = .white
+        }
         return button
     }
     
@@ -61,6 +68,7 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
 
         viewPagerProperties()
         
+        //badgeLabel?.incrementIntValue(by: 2)
         
     }
     

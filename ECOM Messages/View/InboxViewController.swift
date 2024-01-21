@@ -21,6 +21,8 @@ class InboxViewController: UIViewController {
         fetchQuestionData()
         publisher.send()
         
+        
+        
     }
     
     private func fetchQuestionData() {
