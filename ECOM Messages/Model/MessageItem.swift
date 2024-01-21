@@ -12,7 +12,13 @@ struct MessageItem: Codable {
     let description: String?
     let imageUrl: String?
     let uuid: String?
-    let unread: Bool?
+    var unread: Bool?
+    var fullText = false
+    
+    private enum CodingKeys: String, CodingKey {
+            case title, description, imageUrl = "image", uuid, unread
+        }
+    
 }
 
 

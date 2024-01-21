@@ -27,6 +27,11 @@
 		B0DB6F1E2B5CFCB40047DDB5 /* BadgeGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = B0DB6F1D2B5CFCB40047DDB5 /* BadgeGenerator */; };
 		B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */; };
 		B0DB6F222B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F212B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift */; };
+		B0DB6F252B5D67730047DDB5 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F242B5D67730047DDB5 /* String+extension.swift */; };
+		B0DB6F272B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F262B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift */; };
+		B0DB6F2E2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DB6F2D2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib */; };
+		B0DB6F302B5D80B40047DDB5 /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F2F2B5D80B40047DDB5 /* UIImageView+extension.swift */; };
+		B0DB6F322B5DA2090047DDB5 /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F312B5DA2090047DDB5 /* ViewUtilities.swift */; };
 		BE15AABA612D3590BDF46610 /* Pods_ECOM_Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EDE15912B1EE6A07E4C0BB /* Pods_ECOM_Messages.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +59,11 @@
 		B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMessagesViewController.swift; sourceTree = "<group>"; };
 		B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InboxViewController+TableView.swift"; sourceTree = "<group>"; };
 		B0DB6F212B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResultTableViewCell.swift; sourceTree = "<group>"; };
+		B0DB6F242B5D67730047DDB5 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		B0DB6F262B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResultFullTableViewCell.swift; sourceTree = "<group>"; };
+		B0DB6F2D2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageResultFullTableViewCell.xib; sourceTree = "<group>"; };
+		B0DB6F2F2B5D80B40047DDB5 /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
+		B0DB6F312B5DA2090047DDB5 /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
 		D40F03DE06646A4E62098128 /* Pods-ECOM Messages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECOM Messages.release.xcconfig"; path = "Target Support Files/Pods-ECOM Messages/Pods-ECOM Messages.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,23 +114,22 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
-		B01BD20D2B5A77B7009FE7DC /* Utilities */ = {
+		B01BD20D2B5A77B7009FE7DC /* View Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				B0DB6F1B2B5CF9D60047DDB5 /* View Pager */,
+				B0DB6F312B5DA2090047DDB5 /* ViewUtilities.swift */,
 			);
-			path = Utilities;
+			path = "View Utilities";
 			sourceTree = "<group>";
 		};
 		B065B2902B5924060047F05B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B0B4B8D52B5C609D00717263 /* MainViewController.swift */,
-				B065B28E2B59231C0047F05B /* InboxViewController.swift */,
-				B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */,
-				B0DB6F212B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift */,
+				B0DB6F292B5D6ADA0047DDB5 /* Table View Cells */,
+				B0DB6F282B5D6AD20047DDB5 /* View Controlers */,
 				B065B2912B5928F20047F05B /* CustomNavBar.swift */,
-				B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */,
+				B01BD20D2B5A77B7009FE7DC /* View Utilities */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,11 +155,11 @@
 		B0B082492B58440800CD4CBF /* ECOM Messages */ = {
 			isa = PBXGroup;
 			children = (
+				B0DB6F232B5D675D0047DDB5 /* extensions */,
 				B01BD2012B5A7084009FE7DC /* Model */,
 				B065B2902B5924060047F05B /* View */,
 				B01BD2072B5A739A009FE7DC /* View Model */,
 				B01BD2042B5A71E4009FE7DC /* Network Manager */,
-				B01BD20D2B5A77B7009FE7DC /* Utilities */,
 				B0B0824A2B58440800CD4CBF /* AppDelegate.swift */,
 				B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */,
 				B0B082502B58440800CD4CBF /* Main.storyboard */,
@@ -169,6 +178,36 @@
 				B0B4B8D02B5C5CCF00717263 /* LZViewPagerHeader.swift */,
 			);
 			path = "View Pager";
+			sourceTree = "<group>";
+		};
+		B0DB6F232B5D675D0047DDB5 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0DB6F242B5D67730047DDB5 /* String+extension.swift */,
+				B0DB6F2F2B5D80B40047DDB5 /* UIImageView+extension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		B0DB6F282B5D6AD20047DDB5 /* View Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				B0B4B8D52B5C609D00717263 /* MainViewController.swift */,
+				B065B28E2B59231C0047F05B /* InboxViewController.swift */,
+				B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */,
+				B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */,
+			);
+			path = "View Controlers";
+			sourceTree = "<group>";
+		};
+		B0DB6F292B5D6ADA0047DDB5 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B0DB6F212B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift */,
+				B0DB6F262B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift */,
+				B0DB6F2D2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib */,
+			);
+			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
 		EB89A0EBF802B5AF7F5C8C45 /* Pods */ = {
@@ -247,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B082572B58440B00CD4CBF /* LaunchScreen.storyboard in Resources */,
+				B0DB6F2E2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib in Resources */,
 				B0B082542B58440B00CD4CBF /* Assets.xcassets in Resources */,
 				B0B082522B58440800CD4CBF /* Main.storyboard in Resources */,
 			);
@@ -302,18 +342,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B01BD2062B5A71F6009FE7DC /* NetworkTypes.swift in Sources */,
+				B0DB6F322B5DA2090047DDB5 /* ViewUtilities.swift in Sources */,
 				B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */,
 				B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */,
 				B0B4B8D32B5C5CCF00717263 /* LZViewPagerHeader.swift in Sources */,
 				B0DB6F222B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift in Sources */,
+				B0DB6F252B5D67730047DDB5 /* String+extension.swift in Sources */,
 				B0B4B8D22B5C5CCF00717263 /* LZViewPager.swift in Sources */,
 				B0B4B8D82B5C660600717263 /* SavedMessagesViewController.swift in Sources */,
 				B01BD20A2B5A76E4009FE7DC /* NetworkManager.swift in Sources */,
+				B0DB6F302B5D80B40047DDB5 /* UIImageView+extension.swift in Sources */,
 				B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */,
 				B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */,
 				B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */,
 				B01BD20C2B5A76E8009FE7DC /* InteractionManager.swift in Sources */,
 				B0B4B8D42B5C5CCF00717263 /* LZViewPagerContent.swift in Sources */,
+				B0DB6F272B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift in Sources */,
 				B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView.swift in Sources */,
 				B0B4B8D62B5C609D00717263 /* MainViewController.swift in Sources */,
 				B065B28F2B59231C0047F05B /* InboxViewController.swift in Sources */,
