@@ -41,9 +41,9 @@ class GetMessageViewModel {
     private func prepareTableDataSource(response: [MessageItem]) {
         messagesData = response
         // sort by descending uuid
-            .sorted { $1.uuid!.lowercased() < $0.uuid!.lowercased() }
+            .sorted { $1.uuid?.lowercased() ?? "" < $0.uuid?.lowercased() ?? "" }
         // sort by unread messages
-            .sorted { $0.unread! && !$1.unread! }
+            .sorted { $0.unread ?? false && !($1.unread ?? false) }
         numberOfRows = response.count
         print("response", response)
         

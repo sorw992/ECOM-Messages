@@ -6,16 +6,12 @@ import UIKit
 import Combine
 import BadgeGenerator
 
-
-
 class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerDataSource {
     
     // MARK: Outlets
-    
     @IBOutlet weak var viewPager: LZViewPager!
     
-    // MARK: Variables
-    
+    // MARK: Properties
     private var getMessageViewModel = GetMessageViewModel()
     // Subject: A subject acts as a go-between to enable non-Combine imperative code to send values to Combine subscribers.
     // PassthroughSubject: Creates an instance of a PassthroughSubject of type Void and never fail.
@@ -28,24 +24,20 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
     
     var badgeLabel: BadgeLabel? = nil
     
-    
-    
     let inboxViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InboxViewController") as! InboxViewController
     let savedMessagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SavedMessagesViewController") as! SavedMessagesViewController
     
-    // MARK: Properties
+    // MARK: functions
     func viewPagerProperties() {
         viewPager.delegate = self
         viewPager.dataSource = self
         viewPager.hostController = self
-        
         
         inboxViewController.title = "عمومی"
         savedMessagesViewController.title = "ذخیره شده"
         subControllers = [savedMessagesViewController, inboxViewController]
         
         viewPager.reload()
-        
     }
     
     func numberOfItems() -> Int {
@@ -63,7 +55,7 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
         button.backgroundColor = UIColor(red: 213/255.0, green: 246/255.0, blue: 254/255.0, alpha: 1.0)
         
         if index == 1 {
-            badgeLabel = button.setBadge(in: .northWest, with: "1")
+            badgeLabel = button.setBadge(in: .northWest, with: "0")
             badgeLabel?.textColor = .white
         }
         return button
@@ -73,9 +65,6 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
         .darkGray
     }
     
-    // MARK: Actions
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navBar.setUpCustomNavBar(view: self.view, navigationTitleText: "پیام های من")
@@ -84,9 +73,6 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
         publisher.send()
         
         viewPagerProperties()
-        
-        //badgeLabel?.incrementIntValue(by: 2)
-        
     }
     
     private func fetchMessageData() {
@@ -97,17 +83,16 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
                 print("data100", data)
             }) { [weak self] _ in
                 
-                //self?.questionsTableView.reloadData()
-                // print("messageData", self?.getMessageViewModel.messagesData)
-                
                 self?.inboxViewController.messages = self?.getMessageViewModel.messagesData
                 
+                let unreadMessagesCount = self?.getMessageViewModel.messagesData.filter{ $0.unread ?? false }.count
                 
-                
-                
+                if let unreadMessagesCount {
+                    self?.badgeLabel?.incrementIntValue(by: unreadMessagesCount)
+                }
+                                
                 self?.inboxViewController.tableView.reloadData()
             }
             .store(in: &subscriptions)
     }
-    
 }
