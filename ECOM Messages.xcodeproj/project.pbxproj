@@ -12,6 +12,7 @@
 		B01BD20A2B5A76E4009FE7DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */; };
 		B01BD20C2B5A76E8009FE7DC /* InteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */; };
 		B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */; };
+		B035C2D82B5E60E000380DE0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2D72B5E60E000380DE0 /* Utilities.swift */; };
 		B065B28F2B59231C0047F05B /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B28E2B59231C0047F05B /* InboxViewController.swift */; };
 		B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B2912B5928F20047F05B /* CustomNavBar.swift */; };
 		B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824A2B58440800CD4CBF /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageViewModel.swift; sourceTree = "<group>"; };
 		B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionManager.swift; sourceTree = "<group>"; };
+		B035C2D72B5E60E000380DE0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B065B28E2B59231C0047F05B /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		B065B2912B5928F20047F05B /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		B0B082472B58440800CD4CBF /* ECOM Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECOM Messages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,14 @@
 			path = "View Utilities";
 			sourceTree = "<group>";
 		};
+		B035C2D62B5E60C900380DE0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B035C2D72B5E60E000380DE0 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B065B2902B5924060047F05B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 		B0B082492B58440800CD4CBF /* ECOM Messages */ = {
 			isa = PBXGroup;
 			children = (
+				B035C2D62B5E60C900380DE0 /* Utilities */,
 				B0DB6F232B5D675D0047DDB5 /* extensions */,
 				B01BD2012B5A7084009FE7DC /* Model */,
 				B065B2902B5924060047F05B /* View */,
@@ -358,6 +369,7 @@
 				B0DB6F252B5D67730047DDB5 /* String+extension.swift in Sources */,
 				B0B4B8D22B5C5CCF00717263 /* LZViewPager.swift in Sources */,
 				B0B4B8D82B5C660600717263 /* SavedMessagesViewController.swift in Sources */,
+				B035C2D82B5E60E000380DE0 /* Utilities.swift in Sources */,
 				B01BD20A2B5A76E4009FE7DC /* NetworkManager.swift in Sources */,
 				B0DB6F302B5D80B40047DDB5 /* UIImageView+extension.swift in Sources */,
 				B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */,

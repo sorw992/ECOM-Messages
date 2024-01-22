@@ -212,6 +212,7 @@
                             <constraint firstItem="e3U-Yk-AuV" firstAttribute="trailing" secondItem="gut-u4-8ZC" secondAttribute="trailing" id="xFV-QN-0Gn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tbW-Qs-UP5"/>
                     <connections>
                         <outlet property="tableView" destination="gut-u4-8ZC" id="zdb-Oi-m5j"/>
                     </connections>

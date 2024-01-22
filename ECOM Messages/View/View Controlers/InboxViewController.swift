@@ -6,13 +6,18 @@
 
 import UIKit
 
+protocol BadgeChangeDelegate {
+    func userDidSeeMessage(badgeMinus: Int)
+}
 
 class InboxViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var messages: [MessageItem]?
+    var messages: [MessageItem] = []
     var tableViewCellHeight: CGFloat = 0
     
+     var delegate: BadgeChangeDelegate?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
