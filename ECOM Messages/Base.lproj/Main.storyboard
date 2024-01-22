@@ -138,6 +138,16 @@
                                                                 <constraint firstAttribute="height" constant="44" id="sgw-di-u3W"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خوانده شده" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-Si-cfU">
+                                                            <rect key="frame" x="110" y="8" width="86" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="86" id="YQ4-qi-utH"/>
+                                                                <constraint firstAttribute="height" constant="21" id="Zaj-lr-lgS"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" red="0.67854899170000005" green="0.68211561440000001" blue="0.6980413795" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -159,8 +169,11 @@
                                                         <constraint firstItem="rAN-Dz-Acd" firstAttribute="top" secondItem="uFW-FW-ah5" secondAttribute="top" constant="8" id="kgC-6E-NLy"/>
                                                         <constraint firstItem="8zI-qq-3x4" firstAttribute="leading" secondItem="uFW-FW-ah5" secondAttribute="leading" constant="8" id="rAf-zh-fnV"/>
                                                         <constraint firstItem="BVc-dI-cMY" firstAttribute="leading" secondItem="uFW-FW-ah5" secondAttribute="leading" constant="8" id="sOX-0y-UxH"/>
+                                                        <constraint firstItem="S7S-Si-cfU" firstAttribute="top" secondItem="uFW-FW-ah5" secondAttribute="top" constant="8" id="sil-mF-2Qg"/>
                                                         <constraint firstItem="GTE-Ur-f2e" firstAttribute="leading" secondItem="uFW-FW-ah5" secondAttribute="leading" constant="-2" id="stp-tY-utw"/>
+                                                        <constraint firstItem="rAN-Dz-Acd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S7S-Si-cfU" secondAttribute="trailing" constant="8" symbolic="YES" id="u4J-Vz-0he"/>
                                                         <constraint firstItem="IsL-At-fyn" firstAttribute="top" secondItem="uFW-FW-ah5" secondAttribute="top" id="xuD-7x-TMN"/>
+                                                        <constraint firstItem="S7S-Si-cfU" firstAttribute="leading" secondItem="IsL-At-fyn" secondAttribute="trailing" constant="16" id="zSj-cf-BMO"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -176,6 +189,7 @@
                                             <outlet property="btnSave" destination="GTE-Ur-f2e" id="mA9-HY-YsZ"/>
                                             <outlet property="btnShare" destination="IsL-At-fyn" id="HCq-DJ-LXA"/>
                                             <outlet property="imgArrowUpDownShowFullMessage" destination="Mff-nU-OBo" id="RdH-bD-w4q"/>
+                                            <outlet property="labelIsMessageRead" destination="S7S-Si-cfU" id="C7L-5s-g8m"/>
                                             <outlet property="labelMessageText" destination="BVc-dI-cMY" id="fIw-EK-zcX"/>
                                             <outlet property="labelMessageTitle" destination="8zI-qq-3x4" id="akh-lJ-lFN"/>
                                             <outlet property="msgImage" destination="hpN-tX-52m" id="rkk-Lf-My7"/>

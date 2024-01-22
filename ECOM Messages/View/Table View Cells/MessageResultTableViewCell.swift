@@ -11,6 +11,8 @@ class MessageResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewBackground: UIView!
     
+    @IBOutlet weak var labelIsMessageRead: UILabel!
+    
     @IBOutlet weak var btnSave: UIButton!
     
     @IBOutlet weak var btnShare: UIButton!
@@ -28,8 +30,10 @@ class MessageResultTableViewCell: UITableViewCell {
         
         if messageItem.unread == true {
             self.viewBackground?.backgroundColor = .white
+            labelIsMessageRead.text = "خوانده نشده"
         } else {
             self.viewBackground?.backgroundColor = UIColor(red: 239/255.0, green: 243/255.0, blue: 246/255.0, alpha: 1.0)
+            labelIsMessageRead.text = "خوانده شده"
         }
         
         if messageItem.fullText == true {
