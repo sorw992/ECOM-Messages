@@ -26,13 +26,16 @@ class MessageResultFullTableViewCell: UITableViewCell {
  
     @IBOutlet weak var msgImage: UIImageView!
     
+    @IBOutlet weak var labelReadStatus: UILabel!
     
     func configure(for messageItem: MessageItem) {
         
         if messageItem.unread == true {
             self.viewBackground?.backgroundColor = .white
+            labelReadStatus.text = "خوانده نشده"
         } else {
             self.viewBackground?.backgroundColor = UIColor(red: 239/255.0, green: 243/255.0, blue: 246/255.0, alpha: 1.0)
+            labelReadStatus.text = "خوانده شده"
         }
         
         if messageItem.fullText == true {

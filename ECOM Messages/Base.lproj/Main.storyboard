@@ -189,9 +189,9 @@
                                             <outlet property="btnSave" destination="GTE-Ur-f2e" id="mA9-HY-YsZ"/>
                                             <outlet property="btnShare" destination="IsL-At-fyn" id="HCq-DJ-LXA"/>
                                             <outlet property="imgArrowUpDownShowFullMessage" destination="Mff-nU-OBo" id="RdH-bD-w4q"/>
-                                            <outlet property="labelIsMessageRead" destination="S7S-Si-cfU" id="C7L-5s-g8m"/>
                                             <outlet property="labelMessageText" destination="BVc-dI-cMY" id="fIw-EK-zcX"/>
                                             <outlet property="labelMessageTitle" destination="8zI-qq-3x4" id="akh-lJ-lFN"/>
+                                            <outlet property="labelReadStatus" destination="S7S-Si-cfU" id="C7L-5s-g8m"/>
                                             <outlet property="msgImage" destination="hpN-tX-52m" id="rkk-Lf-My7"/>
                                             <outlet property="viewBackground" destination="uFW-FW-ah5" id="bwR-aV-ReQ"/>
                                         </connections>

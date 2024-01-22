@@ -122,14 +122,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خوانده شده" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHV-Up-aBw">
+                                <rect key="frame" x="171" y="8" width="86" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="L3D-uB-fLs"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="SKK-sS-vhL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.67854899170000005" green="0.68211561440000001" blue="0.6980413795" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Y2Z-be-Ha9" secondAttribute="trailing" constant="22" id="0WG-ho-OFv"/>
                             <constraint firstItem="Y2Z-be-Ha9" firstAttribute="top" secondItem="Rnj-7f-VRf" secondAttribute="bottom" constant="1" id="4Og-Cs-Hqo"/>
+                            <constraint firstItem="kHV-Up-aBw" firstAttribute="top" secondItem="GoK-0p-xal" secondAttribute="top" constant="8" id="5uj-MC-Iug"/>
                             <constraint firstItem="Y2Z-be-Ha9" firstAttribute="leading" secondItem="GoK-0p-xal" secondAttribute="leading" constant="22" id="6E2-5B-R0z"/>
                             <constraint firstAttribute="trailing" secondItem="Rnj-7f-VRf" secondAttribute="trailing" constant="35" id="8yL-1o-uEA"/>
                             <constraint firstItem="DMg-6r-aEc" firstAttribute="top" secondItem="l5J-DY-fo4" secondAttribute="bottom" constant="9" id="AeK-hD-6F8"/>
+                            <constraint firstItem="yUB-zA-563" firstAttribute="leading" secondItem="kHV-Up-aBw" secondAttribute="trailing" constant="4" id="AoA-3m-xsc"/>
                             <constraint firstItem="l5J-DY-fo4" firstAttribute="top" secondItem="FTT-H9-LdU" secondAttribute="bottom" constant="10" id="Jqd-XH-ZpE"/>
                             <constraint firstItem="Rnj-7f-VRf" firstAttribute="leading" secondItem="GoK-0p-xal" secondAttribute="leading" constant="35" id="SI6-mf-MmN"/>
                             <constraint firstItem="yUB-zA-563" firstAttribute="top" secondItem="GoK-0p-xal" secondAttribute="top" constant="8" id="TYH-9N-FaO"/>
@@ -159,6 +171,7 @@
                 <outlet property="imgArrowUpDownShowFullMessage" destination="hEp-pI-BqQ" id="juv-RN-nw0"/>
                 <outlet property="labelMessageText" destination="Rnj-7f-VRf" id="bvd-QL-icm"/>
                 <outlet property="labelMessageTitle" destination="DMg-6r-aEc" id="mfN-4o-PJ4"/>
+                <outlet property="labelReadStatus" destination="kHV-Up-aBw" id="OCY-km-dEv"/>
                 <outlet property="msgImage" destination="l5J-DY-fo4" id="XLS-0W-cgp"/>
                 <outlet property="viewBackground" destination="GoK-0p-xal" id="GVF-LK-Ijc"/>
             </connections>
