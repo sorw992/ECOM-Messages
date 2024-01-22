@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noMessageCell" rowHeight="335" id="WbJ-fz-57z" customClass="NoMessageTableViewCell" customModule="ECOM_Messages" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="335"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WbJ-fz-57z" id="6DJ-9e-WyL">
+                <rect key="frame" x="0.0" y="0.0" width="318" height="335"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="npmessagesicon" translatesAutoresizingMaskIntoConstraints="NO" id="7P1-NU-ASz">
+                        <rect key="frame" x="40" y="39" width="238" height="195"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="195" id="OAX-Dg-Zoj"/>
+                            <constraint firstAttribute="width" constant="238" id="bdO-p0-S4v"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هیچ پیامی جهت نمایش موجود نیست" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsA-MC-LAw">
+                        <rect key="frame" x="35" y="244" width="248" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="djc-Pv-cLY"/>
+                            <constraint firstAttribute="width" constant="248" id="pYc-Gd-1Vf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7P1-NU-ASz" firstAttribute="centerX" secondItem="6DJ-9e-WyL" secondAttribute="centerX" id="EM8-Ce-3SO"/>
+                    <constraint firstItem="HsA-MC-LAw" firstAttribute="centerX" secondItem="6DJ-9e-WyL" secondAttribute="centerX" id="I8p-rr-CnC"/>
+                    <constraint firstItem="7P1-NU-ASz" firstAttribute="top" secondItem="6DJ-9e-WyL" secondAttribute="top" constant="39" id="iGS-gG-GhQ"/>
+                    <constraint firstItem="HsA-MC-LAw" firstAttribute="top" secondItem="7P1-NU-ASz" secondAttribute="bottom" constant="10" id="nGB-qE-iMO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-96.18320610687023" y="103.16901408450705"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="npmessagesicon" width="858" height="810"/>
+    </resources>
+</document>

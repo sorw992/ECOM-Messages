@@ -9,10 +9,10 @@ enum APIURL {
     
     case fullUrl
     
-    var apiString: String {
+    var apiString: URL {
         switch self {
         case .fullUrl:
-            return APIURL.baseUrl + APIURL.apiPath + APIURL.apiKey
+            return URL(string: APIURL.baseUrl + APIURL.apiPath + APIURL.apiKey)!
         }
     }
 }

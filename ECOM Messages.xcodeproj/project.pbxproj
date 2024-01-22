@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2022B5A7095009FE7DC /* MessageItem.swift */; };
-		B01BD2062B5A71F6009FE7DC /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2052B5A71F6009FE7DC /* NetworkTypes.swift */; };
-		B01BD20A2B5A76E4009FE7DC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */; };
-		B01BD20C2B5A76E8009FE7DC /* InteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */; };
+		B01BD2062B5A71F6009FE7DC /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2052B5A71F6009FE7DC /* APIURL.swift */; };
 		B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */; };
 		B035C2D82B5E60E000380DE0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2D72B5E60E000380DE0 /* Utilities.swift */; };
+		B035C2DA2B5EAD7400380DE0 /* NoMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B035C2D92B5EAD7400380DE0 /* NoMessageTableViewCell.xib */; };
+		B035C2E22B5EBE4100380DE0 /* NoMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2E12B5EBE4100380DE0 /* NoMessageTableViewCell.swift */; };
+		B035C2E42B5EC30C00380DE0 /* MessageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2E32B5EC30C00380DE0 /* MessageResult.swift */; };
+		B035C2E62B5EC7FD00380DE0 /* LoadingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2E52B5EC7FD00380DE0 /* LoadingMessageTableViewCell.swift */; };
+		B035C2E82B5EC80800380DE0 /* LoadingMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B035C2E72B5EC80800380DE0 /* LoadingMessageTableViewCell.xib */; };
+		B035C2EA2B5EEE9100380DE0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2E92B5EEE9100380DE0 /* NetworkManager.swift */; };
 		B065B28F2B59231C0047F05B /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B28E2B59231C0047F05B /* InboxViewController.swift */; };
 		B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B2912B5928F20047F05B /* CustomNavBar.swift */; };
 		B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824A2B58440800CD4CBF /* AppDelegate.swift */; };
@@ -40,11 +44,15 @@
 		3BDAFD8C388DCDC929725D72 /* Pods-ECOM Messages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECOM Messages.debug.xcconfig"; path = "Target Support Files/Pods-ECOM Messages/Pods-ECOM Messages.debug.xcconfig"; sourceTree = "<group>"; };
 		96EDE15912B1EE6A07E4C0BB /* Pods_ECOM_Messages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECOM_Messages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01BD2022B5A7095009FE7DC /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
-		B01BD2052B5A71F6009FE7DC /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
+		B01BD2052B5A71F6009FE7DC /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageViewModel.swift; sourceTree = "<group>"; };
-		B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionManager.swift; sourceTree = "<group>"; };
 		B035C2D72B5E60E000380DE0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		B035C2D92B5EAD7400380DE0 /* NoMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoMessageTableViewCell.xib; sourceTree = "<group>"; };
+		B035C2E12B5EBE4100380DE0 /* NoMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMessageTableViewCell.swift; sourceTree = "<group>"; };
+		B035C2E32B5EC30C00380DE0 /* MessageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResult.swift; sourceTree = "<group>"; };
+		B035C2E52B5EC7FD00380DE0 /* LoadingMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMessageTableViewCell.swift; sourceTree = "<group>"; };
+		B035C2E72B5EC80800380DE0 /* LoadingMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingMessageTableViewCell.xib; sourceTree = "<group>"; };
+		B035C2E92B5EEE9100380DE0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B065B28E2B59231C0047F05B /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		B065B2912B5928F20047F05B /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		B0B082472B58440800CD4CBF /* ECOM Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECOM Messages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,9 +109,8 @@
 		B01BD2042B5A71E4009FE7DC /* Network Manager */ = {
 			isa = PBXGroup;
 			children = (
-				B01BD2092B5A76E3009FE7DC /* NetworkManager.swift */,
-				B01BD20B2B5A76E8009FE7DC /* InteractionManager.swift */,
-				B01BD2052B5A71F6009FE7DC /* NetworkTypes.swift */,
+				B01BD2052B5A71F6009FE7DC /* APIURL.swift */,
+				B035C2E92B5EEE9100380DE0 /* NetworkManager.swift */,
 			);
 			path = "Network Manager";
 			sourceTree = "<group>";
@@ -111,6 +118,7 @@
 		B01BD2072B5A739A009FE7DC /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B035C2E32B5EC30C00380DE0 /* MessageResult.swift */,
 				B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */,
 			);
 			path = "View Model";
@@ -217,6 +225,10 @@
 				B0DB6F212B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift */,
 				B0DB6F262B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift */,
 				B0DB6F2D2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib */,
+				B035C2D92B5EAD7400380DE0 /* NoMessageTableViewCell.xib */,
+				B035C2E12B5EBE4100380DE0 /* NoMessageTableViewCell.swift */,
+				B035C2E52B5EC7FD00380DE0 /* LoadingMessageTableViewCell.swift */,
+				B035C2E72B5EC80800380DE0 /* LoadingMessageTableViewCell.xib */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -305,6 +317,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B082572B58440B00CD4CBF /* LaunchScreen.storyboard in Resources */,
+				B035C2DA2B5EAD7400380DE0 /* NoMessageTableViewCell.xib in Resources */,
+				B035C2E82B5EC80800380DE0 /* LoadingMessageTableViewCell.xib in Resources */,
 				B0DB6F2E2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib in Resources */,
 				B0B082542B58440B00CD4CBF /* Assets.xcassets in Resources */,
 				B0B082522B58440800CD4CBF /* Main.storyboard in Resources */,
@@ -360,22 +374,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B01BD2062B5A71F6009FE7DC /* NetworkTypes.swift in Sources */,
+				B035C2EA2B5EEE9100380DE0 /* NetworkManager.swift in Sources */,
+				B035C2E42B5EC30C00380DE0 /* MessageResult.swift in Sources */,
+				B01BD2062B5A71F6009FE7DC /* APIURL.swift in Sources */,
 				B0DB6F322B5DA2090047DDB5 /* ViewUtilities.swift in Sources */,
 				B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */,
 				B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */,
+				B035C2E22B5EBE4100380DE0 /* NoMessageTableViewCell.swift in Sources */,
+				B035C2E62B5EC7FD00380DE0 /* LoadingMessageTableViewCell.swift in Sources */,
 				B0B4B8D32B5C5CCF00717263 /* LZViewPagerHeader.swift in Sources */,
 				B0DB6F222B5D0EFE0047DDB5 /* MessageResultTableViewCell.swift in Sources */,
 				B0DB6F252B5D67730047DDB5 /* String+extension.swift in Sources */,
 				B0B4B8D22B5C5CCF00717263 /* LZViewPager.swift in Sources */,
 				B0B4B8D82B5C660600717263 /* SavedMessagesViewController.swift in Sources */,
 				B035C2D82B5E60E000380DE0 /* Utilities.swift in Sources */,
-				B01BD20A2B5A76E4009FE7DC /* NetworkManager.swift in Sources */,
 				B0DB6F302B5D80B40047DDB5 /* UIImageView+extension.swift in Sources */,
 				B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */,
 				B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */,
 				B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */,
-				B01BD20C2B5A76E8009FE7DC /* InteractionManager.swift in Sources */,
 				B0B4B8D42B5C5CCF00717263 /* LZViewPagerContent.swift in Sources */,
 				B0DB6F272B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift in Sources */,
 				B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView.swift in Sources */,

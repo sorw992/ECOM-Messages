@@ -3,7 +3,6 @@
 //
 
 import UIKit
-import Combine
 import BadgeGenerator
 
 class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerDataSource, BadgeChangeDelegate {
@@ -13,11 +12,7 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
     
     // MARK: Properties
     private var getMessageViewModel = GetMessageViewModel()
-    // Subject: A subject acts as a go-between to enable non-Combine imperative code to send values to Combine subscribers.
-    // PassthroughSubject: Creates an instance of a PassthroughSubject of type Void and never fail.
-    private var publisher = PassthroughSubject<Void,Never>()
-    private var subscriptions = Set<AnyCancellable>()
-    
+
     private var subControllers: [UIViewController] = []
     
     let navBar = CustomNavBar()
@@ -72,40 +67,43 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
         self.navBar.setUpCustomNavBar(view: self.view, navigationTitleText: "پیام های من")
         
         inboxViewController.delegate = self
-        
-        fetchMessageData()
-        publisher.send()
+    
+        getMessages()
         
         viewPagerProperties()
     }
     
-    private func fetchMessageData() {
-        getMessageViewModel.getMessagesListVM(messageData: publisher.eraseToAnyPublisher())
+    private func getMessages() {
         
-        getMessageViewModel.reloadMessageList
-            .sink(receiveCompletion: { data in
-                print("data100", data)
-            }) { [weak self] _ in
+        self.inboxViewController.messageResultState = .loading
+        
+        getMessageViewModel.fetchData { [weak self] messages, error in
+            
+            if let error = error {
+                print("error1000", error)
                 
-                if let messageData = self?.getMessageViewModel.messagesData {
-                    self?.inboxViewController.messages = messageData
-                }
-                
-                
-                
-                self?.unreadMessagesCount = self?.getMessageViewModel.messagesData.filter{ $0.unread ?? false }.count ?? 0
-               
-                self?.badgeLabel?.incrementIntValue(by: self?.unreadMessagesCount ?? 0)
-                
-                
+                self?.inboxViewController.messageResultState = .noResults
                 self?.inboxViewController.tableView.reloadData()
+                
+                return
             }
-            .store(in: &subscriptions)
+            
+            if let messageData = self?.getMessageViewModel.messagesData {
+                self?.inboxViewController.messages = messageData
+            }
+            
+            self?.unreadMessagesCount = self?.getMessageViewModel.messagesData.filter{ $0.unread ?? false }.count ?? 0
+           
+            self?.badgeLabel?.incrementIntValue(by: self?.unreadMessagesCount ?? 0)
+            
+            self?.inboxViewController.messageResultState = .results
+            
+            self?.inboxViewController.tableView.reloadData()
+        }
+
     }
-    
-    func userDidSeeMessage(badgeMinus: Int) {
-        print("a", badgeMinus)
         
+    func userDidSeeMessage(badgeMinus: Int) {
         unreadMessagesCount = unreadMessagesCount - badgeMinus
         if unreadMessagesCount == 0 {
             self.badgeLabel?.remove()

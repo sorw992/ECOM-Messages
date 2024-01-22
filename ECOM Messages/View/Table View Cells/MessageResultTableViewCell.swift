@@ -28,6 +28,8 @@ class MessageResultTableViewCell: UITableViewCell {
     
     func configure(for messageItem: MessageItem) {
         
+        selectionStyle = .none
+        
         if messageItem.unread == true {
             self.viewBackground?.backgroundColor = .white
             labelReadStatus.text = "خوانده نشده"

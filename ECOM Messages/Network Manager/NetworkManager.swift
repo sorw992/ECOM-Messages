@@ -1,61 +1,55 @@
-//  Created by Soroush
+//
+//  Created by Soroush on 1/22/24.
+//
 
 import Foundation
-import Combine
 
-final class RequestMethod {
-    enum Method: String {
-        case GET
-    }
+class NetworkManager {
+    
+    static let shared = NetworkManager()
+    
+    private var dataTask: URLSessionDataTask? = nil
 
-    static func request(method: Method, url: URL) -> URLRequest {
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = method.rawValue
+    func getApiMessages(completion: @escaping ([MessageItem]?, NSError?) -> Void) {
+
+            dataTask?.cancel()
+
+            let url = APIURL.fullUrl.apiString
+            
+            let session = URLSession.shared
+            
+        dataTask = session.dataTask(with: url, completionHandler: { data, response, error in
+
+                if let error = error as NSError? {
+                    
+                    print("Failure! \(error.localizedDescription)")
+                   
+                        completion(nil, error)
+                    
+                    return
+                }
+               
+                if let httpResponse = response as? HTTPURLResponse,
+                    
+                    httpResponse.statusCode == 200, let data = data {
+                    
+                    //print("Success! \(response!)")
+                    //print("Success! \(data)")
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode([MessageItem].self, from:data)
+                        
+                    
+                        completion(result, nil)
+
+                    } catch {
+                        print("JSON Error: \(error)")
+                    }
+                }
+
+            })
         
-        // problem
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.timeoutInterval = 60
-        return urlRequest
-    }
-}
-
-enum NetworkError: LocalizedError {
-    case someThingWrong
-    case noInternet
-
-    var errorDescription: String? {
-        switch self {
-        case .someThingWrong:
-            return "Something went wrong"
-        case .noInternet:
-            return "Please check your Internet Connection"
-        }
-    }
-}
-
-class RequestManager {
-
-    static let sharedService = RequestManager()
-
-    func requestAPI<T: Decodable>(requestType: RequestMethod.Method, urlString: String) -> AnyPublisher<T, NetworkError> {
-    
-       // check for internet reachability
-
-        print("URL =====>\(urlString)")
-        guard let url = URL(string: urlString) else {
-            print("Something went wrong")
-            // A publisher that immediately terminates with the specified error.
-            return Fail(error: NetworkError.someThingWrong).eraseToAnyPublisher()
-        }
-    
-        let urlRequest = RequestMethod.request(method: requestType, url: url)
-       
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-        // problem
-            .map { $0.0 }
-            .decode(type: T.self, decoder: JSONDecoder())
-            .catch { _ in Fail(error: NetworkError.someThingWrong).eraseToAnyPublisher() }
-            .eraseToAnyPublisher()
+            dataTask?.resume()
     }
 }

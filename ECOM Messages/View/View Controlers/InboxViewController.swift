@@ -17,6 +17,9 @@ class InboxViewController: UIViewController {
     var tableViewCellHeight: CGFloat = 0
     
      var delegate: BadgeChangeDelegate?
+    
+    
+    var messageResultState: MessageResultState = .noResults
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +31,11 @@ class InboxViewController: UIViewController {
         let messageFullCellNib = UINib(nibName: "MessageResultFullTableViewCell", bundle: nil)
         tableView.register(messageFullCellNib, forCellReuseIdentifier: "messageFullCell")
         
+        let noMessageCellNib = UINib(nibName: "NoMessageTableViewCell", bundle: nil)
+        tableView.register(noMessageCellNib, forCellReuseIdentifier: "noMessageCell")
         
-        
+        let loadingMessageCellNib = UINib(nibName: "LoadingMessageTableViewCell", bundle: nil)
+        tableView.register(loadingMessageCellNib, forCellReuseIdentifier: "loadingMessageCell")
     }
     
     

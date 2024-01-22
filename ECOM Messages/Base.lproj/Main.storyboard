@@ -219,22 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXm-n8-T6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72.51908396946564" y="-2.1126760563380285"/>
-        </scene>
-        <!--Saved Messages View Controller-->
-        <scene sceneID="262-hB-CXZ">
-            <objects>
-                <viewController storyboardIdentifier="SavedMessagesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e4Q-Wf-ElF" customClass="SavedMessagesViewController" customModule="ECOM_Messages" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="81Q-ro-5jB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="lQm-Gs-PHP"/>
-                        <color key="backgroundColor" systemColor="systemCyanColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ok5-U7-Svj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="123" y="732"/>
+            <point key="canvasLocation" x="-94" y="-10"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="BpV-cq-7kJ">
@@ -266,15 +251,59 @@
             </objects>
             <point key="canvasLocation" x="-818" y="-2"/>
         </scene>
+        <!--Saved Messages View Controller-->
+        <scene sceneID="4KB-VO-IhV">
+            <objects>
+                <viewController storyboardIdentifier="SavedMessagesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uf6-pB-hHl" customClass="SavedMessagesViewController" customModule="ECOM_Messages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pab-Mq-pyr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CH1-rf-OaJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" rowHeight="227" id="d7C-Km-B9R" customClass="MessageResultTableViewCell" customModule="ECOM_Messages" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="227"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7C-Km-B9R" id="wRz-8t-GCf">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="227"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Uf6-pB-hHl" id="v3T-bU-cl5"/>
+                                    <outlet property="delegate" destination="Uf6-pB-hHl" id="kGK-Wp-hel"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DsS-1l-L7q"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DsS-1l-L7q" firstAttribute="bottom" secondItem="CH1-rf-OaJ" secondAttribute="bottom" id="Ehw-Hq-jOT"/>
+                            <constraint firstItem="DsS-1l-L7q" firstAttribute="trailing" secondItem="CH1-rf-OaJ" secondAttribute="trailing" id="GFd-Y5-oSD"/>
+                            <constraint firstItem="CH1-rf-OaJ" firstAttribute="top" secondItem="DsS-1l-L7q" secondAttribute="top" id="ZcO-Ma-IAt"/>
+                            <constraint firstItem="CH1-rf-OaJ" firstAttribute="leading" secondItem="DsS-1l-L7q" secondAttribute="leading" id="cgE-ER-LPV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sl3-ug-QbA"/>
+                    <connections>
+                        <outlet property="tableView" destination="CH1-rf-OaJ" id="pSO-Dg-dbK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaW-zA-fut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95" y="654"/>
+        </scene>
     </scenes>
     <resources>
         <image name="saveicon" width="30" height="30"/>
         <image name="shareicon" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
