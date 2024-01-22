@@ -49,7 +49,7 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
                 
             } else {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageResultTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "messageShortCell", for: indexPath) as! MessageResultShortTableViewCell
                 cell.configure(for: messages[indexPath.row])
                 
                 return cell

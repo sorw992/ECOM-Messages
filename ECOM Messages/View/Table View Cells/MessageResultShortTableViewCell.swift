@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MessageResultTableViewCell: UITableViewCell {
+class MessageResultShortTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewBackground: UIView!
     
@@ -27,6 +27,10 @@ class MessageResultTableViewCell: UITableViewCell {
     
     
     func configure(for messageItem: MessageItem) {
+        
+        backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
+        
+        viewBackground.layer.cornerRadius = 16
         
         selectionStyle = .none
         

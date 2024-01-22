@@ -30,6 +30,10 @@ class MessageResultFullTableViewCell: UITableViewCell {
     
     func configure(for messageItem: MessageItem) {
         
+        backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
+        
+       
+        
         selectionStyle = .none
         
         if messageItem.unread == true {

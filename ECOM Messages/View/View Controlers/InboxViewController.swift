@@ -28,6 +28,9 @@ class InboxViewController: UIViewController {
 //        tableView.allowsSelection = false 
         
         
+        let messageShortCellNib = UINib(nibName: "MessageResultShortTableViewCell", bundle: nil)
+        tableView.register(messageShortCellNib, forCellReuseIdentifier: "messageShortCell")
+        
         let messageFullCellNib = UINib(nibName: "MessageResultFullTableViewCell", bundle: nil)
         tableView.register(messageFullCellNib, forCellReuseIdentifier: "messageFullCell")
         
