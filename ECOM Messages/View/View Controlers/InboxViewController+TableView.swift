@@ -29,12 +29,12 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
         switch messageResultState {
         case .noResults:
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "noMessageCell", for: indexPath) as! NoMessageTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.noMessageCell, for: indexPath) as! NoMessageTableViewCell
             cell.selectionStyle = .none
             return cell
             
         case .loading:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "loadingMessageCell", for: indexPath) as! LoadingMessageTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.loadingMessageCell, for: indexPath) as! LoadingMessageTableViewCell
             cell.selectionStyle = .none
             return cell
             
@@ -42,14 +42,14 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             
             
             if getMessageViewModel.messagesData[indexPath.row].fullText {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "messageFullCell", for: indexPath) as! MessageResultFullTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageFullCell, for: indexPath) as! MessageResultFullTableViewCell
                 cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
                 
                 return cell
                 
             } else {
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "messageShortCell", for: indexPath) as! MessageResultShortTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageShortCell, for: indexPath) as! MessageResultShortTableViewCell
                 
                 cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
                 
@@ -87,8 +87,6 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
         
         switch messageResultState {
             

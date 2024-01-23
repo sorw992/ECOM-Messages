@@ -31,16 +31,16 @@ class InboxViewController: UIViewController {
         tableView.separatorStyle = .none
         
         let messageShortCellNib = UINib(nibName: "MessageResultShortTableViewCell", bundle: nil)
-        tableView.register(messageShortCellNib, forCellReuseIdentifier: "messageShortCell")
+        tableView.register(messageShortCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.messageShortCell)
         
         let messageFullCellNib = UINib(nibName: "MessageResultFullTableViewCell", bundle: nil)
-        tableView.register(messageFullCellNib, forCellReuseIdentifier: "messageFullCell")
+        tableView.register(messageFullCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.messageFullCell)
         
         let noMessageCellNib = UINib(nibName: "NoMessageTableViewCell", bundle: nil)
-        tableView.register(noMessageCellNib, forCellReuseIdentifier: "noMessageCell")
+        tableView.register(noMessageCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.noMessageCell)
         
         let loadingMessageCellNib = UINib(nibName: "LoadingMessageTableViewCell", bundle: nil)
-        tableView.register(loadingMessageCellNib, forCellReuseIdentifier: "loadingMessageCell")
+        tableView.register(loadingMessageCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingMessageCell)
         
         getMessages()
         

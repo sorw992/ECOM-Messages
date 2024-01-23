@@ -24,6 +24,8 @@
 		B0815B6C2B6002CF00B618E2 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0815B6B2B6002CF00B618E2 /* SQLiteDatabase.swift */; };
 		B0815B6E2B60038900B618E2 /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0815B6D2B60038900B618E2 /* SQLiteCommands.swift */; };
 		B0815B702B600C5000B618E2 /* MessageSavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0815B6F2B600C5000B618E2 /* MessageSavedViewModel.swift */; };
+		B0815B722B60468D00B618E2 /* SavedMessagesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0815B712B60468C00B618E2 /* SavedMessagesViewController+TableView.swift */; };
+		B0815B742B60523500B618E2 /* TableViewCellIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0815B732B60523500B618E2 /* TableViewCellIdentifiers.swift */; };
 		B0B0824B2B58440800CD4CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824A2B58440800CD4CBF /* AppDelegate.swift */; };
 		B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */; };
 		B0B082522B58440800CD4CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B082502B58440800CD4CBF /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		B0815B6B2B6002CF00B618E2 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		B0815B6D2B60038900B618E2 /* SQLiteCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
 		B0815B6F2B600C5000B618E2 /* MessageSavedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSavedViewModel.swift; sourceTree = "<group>"; };
+		B0815B712B60468C00B618E2 /* SavedMessagesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedMessagesViewController+TableView.swift"; sourceTree = "<group>"; };
+		B0815B732B60523500B618E2 /* TableViewCellIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellIdentifiers.swift; sourceTree = "<group>"; };
 		B0B082472B58440800CD4CBF /* ECOM Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECOM Messages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0824A2B58440800CD4CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		B01BD2072B5A739A009FE7DC /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B0815B732B60523500B618E2 /* TableViewCellIdentifiers.swift */,
 				B035C2E32B5EC30C00380DE0 /* MessageResultState.swift */,
 				B0815B692B5FE49E00B618E2 /* SavedMessageState.swift */,
 				B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */,
@@ -237,6 +242,7 @@
 				B065B28E2B59231C0047F05B /* InboxViewController.swift */,
 				B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */,
 				B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */,
+				B0815B712B60468C00B618E2 /* SavedMessagesViewController+TableView.swift */,
 			);
 			path = "View Controlers";
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				B0DB6F222B5D0EFE0047DDB5 /* MessageResultShortTableViewCell.swift in Sources */,
 				B0815B6E2B60038900B618E2 /* SQLiteCommands.swift in Sources */,
 				B0DB6F252B5D67730047DDB5 /* String+extension.swift in Sources */,
+				B0815B742B60523500B618E2 /* TableViewCellIdentifiers.swift in Sources */,
 				B0B4B8D22B5C5CCF00717263 /* LZViewPager.swift in Sources */,
 				B0815B702B600C5000B618E2 /* MessageSavedViewModel.swift in Sources */,
 				B0B4B8D82B5C660600717263 /* SavedMessagesViewController.swift in Sources */,
@@ -424,6 +431,7 @@
 				B0DB6F272B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift in Sources */,
 				B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView.swift in Sources */,
 				B0B4B8D62B5C609D00717263 /* MainViewController.swift in Sources */,
+				B0815B722B60468D00B618E2 /* SavedMessagesViewController+TableView.swift in Sources */,
 				B065B28F2B59231C0047F05B /* InboxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,8 +1,5 @@
 //
-//  SQLiteDatabase.swift
-//  ContactList
-//
-//  Created by Niso on 1/26/21.
+//  Created by Soroush
 //
 
 import Foundation
