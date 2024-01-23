@@ -76,11 +76,11 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
         case .results:
             if getMessageViewModel.messagesData[indexPath.row].fullText == true {
                 tableViewCellHeight = calculateCellHeight(title: getMessageViewModel.messagesData[indexPath.row].title ?? "", description: getMessageViewModel.messagesData[indexPath.row].description ?? "", fullDescriptionCell: true)
-                print(tableViewCellHeight)
+                
                 return tableViewCellHeight
             } else {
                 tableViewCellHeight = calculateCellHeight(title: getMessageViewModel.messagesData[indexPath.row].title ?? "", description: getMessageViewModel.messagesData[indexPath.row].description ?? "", fullDescriptionCell: false)
-                print(tableViewCellHeight)
+                
                 return tableViewCellHeight
             }
         }

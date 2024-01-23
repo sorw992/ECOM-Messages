@@ -34,9 +34,8 @@ class MessageResultShortTableViewCell: UITableViewCell {
     
     // MARK: actions
     @IBAction func didTapBtnSave(_ sender: UIButton) {
-        
         if let messageItem {
-            let contactAddedToTable = SQLiteCommands.insertRow(messageItem)
+            SQLiteCommands.insertRow(messageItem)
         }
     }
     

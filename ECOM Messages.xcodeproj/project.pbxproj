@@ -161,6 +161,7 @@
 		B065B2902B5924060047F05B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B0B082502B58440800CD4CBF /* Main.storyboard */,
 				B0DB6F332B5DB00D0047DDB5 /* Custom Views */,
 				B0DB6F292B5D6ADA0047DDB5 /* Table View Cells */,
 				B0DB6F282B5D6AD20047DDB5 /* View Controlers */,
@@ -208,7 +209,6 @@
 				B01BD2042B5A71E4009FE7DC /* Network Manager */,
 				B0B0824A2B58440800CD4CBF /* AppDelegate.swift */,
 				B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */,
-				B0B082502B58440800CD4CBF /* Main.storyboard */,
 				B0B082532B58440B00CD4CBF /* Assets.xcassets */,
 				B0B082552B58440B00CD4CBF /* LaunchScreen.storyboard */,
 				B0B082582B58440B00CD4CBF /* Info.plist */,

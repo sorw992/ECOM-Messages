@@ -1,8 +1,5 @@
 //
-//  ContactScreenViewModel.swift
-//  ContactList
-//
-//  Created by Niso on 1/27/21.
+//  Created by Soroush
 //
 
 import Foundation

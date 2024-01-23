@@ -4,7 +4,6 @@
 
 import Foundation
 
-
 struct TableView {
     struct CellIdentifiers {
         static let messageShortCell = "messageShortCell"

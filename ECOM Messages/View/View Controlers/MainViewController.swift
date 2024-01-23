@@ -64,7 +64,7 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
     
     func userDidSeeMessage(badgeMinus: Int) {
         unreadMessagesCount = unreadMessagesCount - badgeMinus
-        print(unreadMessagesCount)
+        
         if unreadMessagesCount == 0 {
             self.badgeLabel?.remove()
         }

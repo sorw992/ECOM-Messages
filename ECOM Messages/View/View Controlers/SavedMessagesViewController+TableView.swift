@@ -58,11 +58,11 @@ extension SavedMessagesViewController {
         case .results:
             if messageSavedViewModel.savedMessages[indexPath.row].fullText == true {
                 tableViewCellHeight = calculateCellHeight(title: messageSavedViewModel.savedMessages[indexPath.row].title ?? "", description: messageSavedViewModel.savedMessages[indexPath.row].description ?? "", fullDescriptionCell: true)
-                print(tableViewCellHeight)
+               
                 return tableViewCellHeight
             } else {
                 tableViewCellHeight = calculateCellHeight(title: messageSavedViewModel.savedMessages[indexPath.row].title ?? "", description: messageSavedViewModel.savedMessages[indexPath.row].description ?? "", fullDescriptionCell: false)
-                print(tableViewCellHeight)
+                
                 return tableViewCellHeight
             }
         }
