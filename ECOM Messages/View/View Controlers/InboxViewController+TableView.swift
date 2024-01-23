@@ -20,7 +20,7 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             return 1
             
         case .results:
-            return messages.count
+            return getMessageViewModel.messagesData.count
         }
     }
     
@@ -41,16 +41,16 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
         case .results:
             
             
-            if messages[indexPath.row].fullText {
+            if getMessageViewModel.messagesData[indexPath.row].fullText {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "messageFullCell", for: indexPath) as! MessageResultFullTableViewCell
-                cell.configure(for: messages[indexPath.row])
+                cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
                 
                 return cell
                 
             } else {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "messageShortCell", for: indexPath) as! MessageResultShortTableViewCell
-                cell.configure(for: messages[indexPath.row])
+                cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
                 
                 return cell
             }
@@ -73,22 +73,16 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             return 113
             
         case .results:
-            if messages[indexPath.row].fullText == true {
-                tableViewCellHeight = calculateCellHeight(title: messages[indexPath.row].title ?? "", description: messages[indexPath.row].description ?? "", fullDescriptionCell: true)
+            if getMessageViewModel.messagesData[indexPath.row].fullText == true {
+                tableViewCellHeight = calculateCellHeight(title: getMessageViewModel.messagesData[indexPath.row].title ?? "", description: getMessageViewModel.messagesData[indexPath.row].description ?? "", fullDescriptionCell: true)
                 print(tableViewCellHeight)
                 return tableViewCellHeight
             } else {
-                tableViewCellHeight = calculateCellHeight(title: messages[indexPath.row].title ?? "", description: messages[indexPath.row].description ?? "", fullDescriptionCell: false)
+                tableViewCellHeight = calculateCellHeight(title: getMessageViewModel.messagesData[indexPath.row].title ?? "", description: getMessageViewModel.messagesData[indexPath.row].description ?? "", fullDescriptionCell: false)
                 print(tableViewCellHeight)
                 return tableViewCellHeight
             }
         }
-        
-        
-        
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -103,27 +97,23 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
         case .loading: break
             
         case .results:
-            if messages[indexPath.row].unread == true {
+            if getMessageViewModel.messagesData[indexPath.row].unread == true {
                 delegate?.userDidSeeMessage(badgeMinus: 1)
-                messages[indexPath.row].unread = false
+                getMessageViewModel.messagesData[indexPath.row].unread = false
             }
             
-            messages[indexPath.row].unread = false
+            getMessageViewModel.messagesData[indexPath.row].unread = false
             
-            if messages[indexPath.row].fullText == true {
+            if getMessageViewModel.messagesData[indexPath.row].fullText == true {
                 
-                messages[indexPath.row].fullText = false
-                messages = sortMessagesArray(messages: messages )
+                getMessageViewModel.messagesData[indexPath.row].fullText = false
+                getMessageViewModel.messagesData = sortMessagesArray(messages: getMessageViewModel.messagesData )
                 
             } else {
-                messages[indexPath.row].fullText = true
+                getMessageViewModel.messagesData[indexPath.row].fullText = true
             }
             
             tableView.reloadData()
         }
-        
-       
-        
-        
     }
 }

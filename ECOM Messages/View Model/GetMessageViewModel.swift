@@ -6,6 +6,7 @@ import Foundation
 class GetMessageViewModel {
     
     var messagesData = [MessageItem]()
+    var errorMessage = ""
     
     func fetchData(updateUI: @escaping ([MessageItem]?, String?) -> Void) {
         
@@ -13,7 +14,8 @@ class GetMessageViewModel {
             
             if let error {
                 DispatchQueue.main.async {
-                    updateUI(nil, error.localizedDescription)
+                    self.errorMessage = error.localizedDescription
+                    updateUI(nil, self.errorMessage)
                 }
             }
             

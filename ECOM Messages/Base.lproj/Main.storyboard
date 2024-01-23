@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="227" id="Ghu-i9-qg9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageShortCell" rowHeight="227" id="Ghu-i9-qg9">
                                         <rect key="frame" x="0.0" y="50" width="393" height="227"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ghu-i9-qg9" id="XKr-tV-nvM">
@@ -69,7 +69,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="90q-hI-dqM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.85969299079999995" green="0.96026033160000002" blue="0.99216252569999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="90q-hI-dqM" firstAttribute="bottom" secondItem="5r6-uu-v06" secondAttribute="bottom" id="A1K-U9-giE"/>
                             <constraint firstItem="5r6-uu-v06" firstAttribute="leading" secondItem="90q-hI-dqM" secondAttribute="leading" id="G4i-jx-D1Y"/>

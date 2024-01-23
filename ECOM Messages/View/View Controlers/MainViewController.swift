@@ -11,7 +11,6 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
     @IBOutlet weak var viewPager: LZViewPager!
     
     // MARK: Properties
-    private var getMessageViewModel = GetMessageViewModel()
 
     private var subControllers: [UIViewController] = []
     
@@ -37,6 +36,7 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
         viewPager.reload()
     }
     
+    // MARK: badge Functins
     func numberOfItems() -> Int {
         self.subControllers.count
     }
@@ -62,52 +62,28 @@ class MainViewController: UIViewController, LZViewPagerDelegate, LZViewPagerData
         .darkGray
     }
     
+    func userDidSeeMessage(badgeMinus: Int) {
+        unreadMessagesCount = unreadMessagesCount - badgeMinus
+        print(unreadMessagesCount)
+        if unreadMessagesCount == 0 {
+            self.badgeLabel?.remove()
+        }
+        self.badgeLabel?.set("\(unreadMessagesCount)")
+    }
+    
+    func passBadgeCount(count: Int) {
+        unreadMessagesCount = count
+        self.badgeLabel?.incrementIntValue(by: count)
+    }
+    
+    // MARK: Lifecycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navBar.setUpCustomNavBar(view: self.view, navigationTitleText: "پیام های من")
         
         inboxViewController.delegate = self
     
-        getMessages()
-        
         viewPagerProperties()
-    }
-    
-    private func getMessages() {
-        
-        self.inboxViewController.messageResultState = .loading
-        
-        getMessageViewModel.fetchData { [weak self] messages, error in
-            
-            if let error = error {
-                print("error1000", error)
-                
-                self?.inboxViewController.messageResultState = .noResults
-                self?.inboxViewController.tableView.reloadData()
-                
-                return
-            }
-            
-            if let messageData = self?.getMessageViewModel.messagesData {
-                self?.inboxViewController.messages = messageData
-            }
-            
-            self?.unreadMessagesCount = self?.getMessageViewModel.messagesData.filter{ $0.unread ?? false }.count ?? 0
-           
-            self?.badgeLabel?.incrementIntValue(by: self?.unreadMessagesCount ?? 0)
-            
-            self?.inboxViewController.messageResultState = .results
-            
-            self?.inboxViewController.tableView.reloadData()
-        }
-
-    }
-        
-    func userDidSeeMessage(badgeMinus: Int) {
-        unreadMessagesCount = unreadMessagesCount - badgeMinus
-        if unreadMessagesCount == 0 {
-            self.badgeLabel?.remove()
-        }
-        self.badgeLabel?.set("\(unreadMessagesCount)")
     }
 }
