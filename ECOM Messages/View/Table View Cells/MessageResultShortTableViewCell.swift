@@ -9,11 +9,12 @@ import UIKit
 
 class MessageResultShortTableViewCell: UITableViewCell {
     
+    // MARK: Outlets
+    
     @IBOutlet weak var viewBackground: UIView!
     
     @IBOutlet weak var labelReadStatus: UILabel!
     
-    @IBOutlet weak var btnSave: UIButton!
     
     @IBOutlet weak var btnShare: UIButton!
     
@@ -25,8 +26,29 @@ class MessageResultShortTableViewCell: UITableViewCell {
     
     @IBOutlet weak var msgImage: UIImageView!
     
+    @IBOutlet weak var btnSave: UIButton!
     
+    // MARK: properties
+    
+    var messageItem: MessageItem?
+    
+    // MARK: actions
+    @IBAction func didTapBtnSave(_ sender: UIButton) {
+        
+        if let messageItem {
+            let contactAddedToTable = SQLiteCommands.insertRow(messageItem)
+        }
+    }
+    
+    @IBAction func didTapBtnShare(_ sender: UIButton) {
+        print("btn share action")
+    }
+    
+    // MARK: functions
     func configure(for messageItem: MessageItem) {
+
+        
+        self.messageItem = messageItem
         
         backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
         

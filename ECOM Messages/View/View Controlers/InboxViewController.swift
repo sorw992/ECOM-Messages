@@ -12,11 +12,12 @@ class InboxViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //will delete soon
-   // var messages: [MessageItem] = []
+   
     var tableViewCellHeight: CGFloat = 0
     
      var getMessageViewModel = GetMessageViewModel()
+    
+    private var messageSavedViewModel = MessageSavedViewModel()
     
      var delegate: BadgeChangeDelegate?
     
@@ -42,6 +43,27 @@ class InboxViewController: UIViewController {
         tableView.register(loadingMessageCellNib, forCellReuseIdentifier: "loadingMessageCell")
         
         getMessages()
+        
+        createDatabaseTable()
+        
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+        tableView.reloadData()
+    }
+    
+    // MARK: - SQLite Database
+    private func loadData() {
+        messageSavedViewModel.loadDataFromSQLiteDatabase()
+    }
+    
+    // MARK: - Connect to database and create table.
+    private func createDatabaseTable() {
+        let database = SQLiteDatabase.sharedInstance
+        database.createTable()
     }
     
     private func getMessages() {
@@ -64,9 +86,9 @@ class InboxViewController: UIViewController {
                 self?.messageResultState = .results
                 
                 self?.tableView.reloadData()
+                //self?.saveListItems()
             }
-            
-            
         }
     }
+    
 }

@@ -12,6 +12,8 @@ class GetMessageViewModel {
         
         NetworkManager.shared.getApiMessages { messages, error in
             
+            
+            
             if let error {
                 DispatchQueue.main.async {
                     self.errorMessage = error.localizedDescription
@@ -19,7 +21,15 @@ class GetMessageViewModel {
                 }
             }
             
-            if let messages {
+            if var messages {
+                
+                for i in 0..<messages.count {
+                    
+                    if let data = try? Data(contentsOf: URL(string: messages[i].imageUrl ?? "")!) {
+                        messages[i].imageData = data
+                    }
+                    
+                }
                 
                 self.messagesData = sortMessagesArray(messages: messages)
                 

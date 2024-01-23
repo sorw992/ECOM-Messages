@@ -36,6 +36,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="saveicon"/>
+                                <connections>
+                                    <action selector="didTapBtnSave:" destination="wbG-L0-5Pv" eventType="touchUpInside" id="4u1-FJ-3s0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6n-dU-xVS">
                                 <rect key="frame" x="46" y="0.0" width="54" height="44"/>
@@ -45,6 +48,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="shareicon"/>
+                                <connections>
+                                    <action selector="didTapBtnShare:" destination="wbG-L0-5Pv" eventType="touchUpInside" id="kug-0U-g7v"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خوانده شده" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oa-hg-VV7">
                                 <rect key="frame" x="122" y="8" width="100" height="21"/>

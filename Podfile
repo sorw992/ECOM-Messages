@@ -7,6 +7,7 @@ target 'ECOM Messages' do
 
   # Pods for ECOM Messages
   pod 'SnapKit'
+  pod 'SQLite.swift', '~> 0.12.0'
   
 
 end
