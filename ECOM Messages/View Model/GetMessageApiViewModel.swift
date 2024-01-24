@@ -50,6 +50,10 @@ class GetMessageApiViewModel {
         messagesData = syncSaveStatus(arr1: messagesData, arr2: SQLiteCommands.presentRows() ?? [], resetFirstArray: true)
     }
     
+    func clearSelectedElementsForDelete() {
+        removedMessagesArray.removeAll()
+    }
+    
     func removeSelectedElementsFromMessagesArray() {
         for i in (0..<messagesData.count).reversed() {
             if let _ = removedMessagesArray.lastIndex(where: {$0.uuid == messagesData[i].uuid}) {
@@ -57,5 +61,12 @@ class GetMessageApiViewModel {
             }
         }
         removedMessagesArray.removeAll()
+    }
+    func uncheckSelectedElementForRemove(messageElement: MessageItem) {
+        
+        removedMessagesArray = removedMessagesArray.filter {
+            $0.uuid != messageElement.uuid
+        }
+        
     }
 }

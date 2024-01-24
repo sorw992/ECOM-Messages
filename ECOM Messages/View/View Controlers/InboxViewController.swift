@@ -96,7 +96,7 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
                 weakSelf.messageResultState = .noResults
                 weakSelf.tableView.reloadData()
                 
-                alertView(viewController: weakSelf, title: "Error", message: "Try Again") {
+                alertViewGetApiError(viewController: weakSelf, title: "Error", message: "Try Again") {
                     self?.getMessagesFromApi()
                     
                     self?.tableView.reloadData()
@@ -120,12 +120,17 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
     
     // MARK: Footer Editor delegate
     func didTapDeleteButton() {
-        getMessageViewModel.removeSelectedElementsFromMessagesArray()
-        tableView.reloadData()
+        if getMessageViewModel.removedMessagesArray.count != 0 {
+            getMessageViewModel.removeSelectedElementsFromMessagesArray()
+            tableView.reloadData()
+        } else {
+            alertView(viewController: self, title: "خطا", message: "لطفا حداقل ۱ پیام را انتخاب کنید")
+        }
+        
     }
     
     func didTapCancelButton() {
-        getMessageViewModel.removedMessagesArray = []
+        getMessageViewModel.clearSelectedElementsForDelete()
         tableviewBottomConstaint.constant = 0
         if getMessageViewModel.messagesData.count > 0 {
             messageResultState = .results
@@ -137,11 +142,15 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
     // MARK: checkbox delegate
     func checkBoxTapped(messageItem: MessageItem, checked: Bool, index: Int) {
         
+        if checked {
+            // add to removedMessagesArray
+            getMessageViewModel.removedMessagesArray.append(messageItem)
+        } else {
+            getMessageViewModel.uncheckSelectedElementForRemove(messageElement: messageItem)
+        }
+        
         getMessageViewModel.messagesData[index].checked = checked
         
-        // add to removedMessagesArray
-        getMessageViewModel.removedMessagesArray.append(messageItem)
-        print(getMessageViewModel.removedMessagesArray)
         tableView.reloadData()
         
     }

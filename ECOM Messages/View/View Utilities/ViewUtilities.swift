@@ -23,7 +23,7 @@ func calculateCellHeight(title: String, description: String, fullDescriptionCell
 }
 
 
-func alertView(viewController: UIViewController, title: String = "", message: String = "", completion: @escaping () -> Void ) {
+func alertViewGetApiError(viewController: UIViewController, title: String = "", message: String = "", completion: @escaping () -> Void ) {
     
     // Create the alert controller
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -38,6 +38,22 @@ func alertView(viewController: UIViewController, title: String = "", message: St
     let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
     
     alertController.addAction(okAction)
+    alertController.addAction(cancelAction)
+
+    
+    viewController.present(alertController, animated: true, completion: nil)
+    
+}
+
+
+func alertView(viewController: UIViewController, title: String = "", message: String = "" ) {
+    
+    // Create the alert controller
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+   
+    let cancelAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel)
+    
     alertController.addAction(cancelAction)
 
     
