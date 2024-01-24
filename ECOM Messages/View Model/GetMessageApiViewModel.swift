@@ -3,7 +3,7 @@
 
 import Foundation
 
-class GetMessageViewModel {
+class GetMessageApiViewModel {
     
     var messagesData = [MessageItem]()
     var errorMessage = ""
@@ -11,8 +11,6 @@ class GetMessageViewModel {
     func fetchData(updateUI: @escaping ([MessageItem]?, String?) -> Void) {
         
         NetworkManager.shared.getApiMessages { messages, error in
-            
-            
             
             if let error {
                 DispatchQueue.main.async {

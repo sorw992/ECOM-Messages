@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B01BD2032B5A7095009FE7DC /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2022B5A7095009FE7DC /* MessageItem.swift */; };
 		B01BD2062B5A71F6009FE7DC /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2052B5A71F6009FE7DC /* APIURL.swift */; };
-		B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */; };
+		B01BD2102B5A79B6009FE7DC /* GetMessageApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BD2082B5A73AB009FE7DC /* GetMessageApiViewModel.swift */; };
 		B035C2D82B5E60E000380DE0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2D72B5E60E000380DE0 /* Utilities.swift */; };
 		B035C2DA2B5EAD7400380DE0 /* NoMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B035C2D92B5EAD7400380DE0 /* NoMessageTableViewCell.xib */; };
 		B035C2E22B5EBE4100380DE0 /* NoMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2E12B5EBE4100380DE0 /* NoMessageTableViewCell.swift */; };
@@ -52,7 +52,7 @@
 		96EDE15912B1EE6A07E4C0BB /* Pods_ECOM_Messages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECOM_Messages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01BD2022B5A7095009FE7DC /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
 		B01BD2052B5A71F6009FE7DC /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
-		B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageViewModel.swift; sourceTree = "<group>"; };
+		B01BD2082B5A73AB009FE7DC /* GetMessageApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageApiViewModel.swift; sourceTree = "<group>"; };
 		B035C2D72B5E60E000380DE0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B035C2D92B5EAD7400380DE0 /* NoMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoMessageTableViewCell.xib; sourceTree = "<group>"; };
 		B035C2E12B5EBE4100380DE0 /* NoMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 				B0815B732B60523500B618E2 /* TableViewCellIdentifiers.swift */,
 				B035C2E32B5EC30C00380DE0 /* MessageResultState.swift */,
 				B0815B692B5FE49E00B618E2 /* SavedMessageState.swift */,
-				B01BD2082B5A73AB009FE7DC /* GetMessageViewModel.swift */,
+				B01BD2082B5A73AB009FE7DC /* GetMessageApiViewModel.swift */,
 				B0815B6F2B600C5000B618E2 /* MessageSavedViewModel.swift */,
 			);
 			path = "View Model";
@@ -200,7 +200,6 @@
 		B0B082492B58440800CD4CBF /* ECOM Messages */ = {
 			isa = PBXGroup;
 			children = (
-				B035C2D62B5E60C900380DE0 /* Utilities */,
 				B0DB6F232B5D675D0047DDB5 /* extensions */,
 				B01BD2012B5A7084009FE7DC /* Model */,
 				B065B2902B5924060047F05B /* View */,
@@ -209,6 +208,7 @@
 				B01BD2042B5A71E4009FE7DC /* Network Manager */,
 				B0B0824A2B58440800CD4CBF /* AppDelegate.swift */,
 				B0B0824C2B58440800CD4CBF /* SceneDelegate.swift */,
+				B035C2D62B5E60C900380DE0 /* Utilities */,
 				B0B082532B58440B00CD4CBF /* Assets.xcassets */,
 				B0B082552B58440B00CD4CBF /* LaunchScreen.storyboard */,
 				B0B082582B58440B00CD4CBF /* Info.plist */,
@@ -425,7 +425,7 @@
 				B035C2D82B5E60E000380DE0 /* Utilities.swift in Sources */,
 				B0DB6F302B5D80B40047DDB5 /* UIImageView+extension.swift in Sources */,
 				B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */,
-				B01BD2102B5A79B6009FE7DC /* GetMessageViewModel.swift in Sources */,
+				B01BD2102B5A79B6009FE7DC /* GetMessageApiViewModel.swift in Sources */,
 				B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */,
 				B0B4B8D42B5C5CCF00717263 /* LZViewPagerContent.swift in Sources */,
 				B0DB6F272B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift in Sources */,

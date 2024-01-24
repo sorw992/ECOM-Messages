@@ -19,7 +19,7 @@ class InboxViewController: UIViewController, SaveMessageDelegate {
     
     var tableViewCellHeight: CGFloat = 0
     
-     var getMessageViewModel = GetMessageViewModel()
+     var getMessageViewModel = GetMessageApiViewModel()
     
     private var messageSavedViewModel = MessageSavedViewModel()
     
@@ -46,7 +46,7 @@ class InboxViewController: UIViewController, SaveMessageDelegate {
         let loadingMessageCellNib = UINib(nibName: "LoadingMessageTableViewCell", bundle: nil)
         tableView.register(loadingMessageCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingMessageCell)
         
-        getMessages()
+        getMessagesFromApi()
         
         createDatabaseTable()
         
@@ -88,26 +88,35 @@ class InboxViewController: UIViewController, SaveMessageDelegate {
         tableView.reloadData()
     }
     
-    private func getMessages() {
+     func getMessagesFromApi() {
         
         messageResultState = .loading
         
         getMessageViewModel.fetchData { [weak self] messages, error in
             
+            guard let weakSelf = self else { return }
+            
             if error != nil {
-                self?.messageResultState = .noResults
-                self?.tableView.reloadData()
+                weakSelf.messageResultState = .noResults
+                weakSelf.tableView.reloadData()
+                
+                alertView(viewController: weakSelf, title: "Error", message: "Try Again") {
+                    self?.getMessagesFromApi()
+                    
+                    self?.tableView.reloadData()
+                }
+                
                 return
             }
             
             if let messages {
                 let unreadMessagesCount = messages.filter{ $0.unread ?? false }.count
            
-                self?.delegate?.passBadgeCount(count: unreadMessagesCount)
+                weakSelf.delegate?.passBadgeCount(count: unreadMessagesCount)
                 
-                self?.messageResultState = .results
+                weakSelf.messageResultState = .results
                 
-                self?.tableView.reloadData()
+                weakSelf.tableView.reloadData()
                 //self?.saveListItems()
             }
         }

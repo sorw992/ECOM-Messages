@@ -4,7 +4,7 @@
 
 import UIKit
 
-class SavedMessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SaveMessageDelegate {
+class SavedMessagesViewController: UIViewController, SaveMessageDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
