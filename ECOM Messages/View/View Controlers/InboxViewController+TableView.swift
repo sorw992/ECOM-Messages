@@ -72,7 +72,7 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageFullCell, for: indexPath) as! MessageResultFullTableViewCell
                 cell.configure(for: getMessageViewModel.messagesData[indexPath.row], messageResultState: .editMode)
                 cell.saveMessageDelegate = self
-                
+                cell.checkboxDelegate = self
                 cell.indexPath = indexPath
                 
                 return cell

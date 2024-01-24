@@ -3,8 +3,6 @@
 
 import UIKit
 
-
-
 class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDelegate, CheckBoxDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -51,14 +49,11 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
         tableView.addGestureRecognizer(longPress)
     }
-   
-    
 
     override func viewWillAppear(_ animated: Bool) {
         loadData()
         getMessageViewModel.refreshMessages()
         tableView.reloadData()
-        
     }
     
     // MARK: - SQLite Database
@@ -123,14 +118,10 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
         }
     }
     
-    
-    
     // MARK: Footer Editor delegate
     func didTapDeleteButton() {
         getMessageViewModel.removeSelectedElementsFromMessagesArray()
-    
         tableView.reloadData()
-        
     }
     
     func didTapCancelButton() {

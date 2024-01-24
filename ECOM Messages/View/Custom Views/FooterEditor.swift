@@ -59,7 +59,6 @@ class FooterEditor: UIView {
     }
     
     @objc func btnDeleteAction() {
-        print("btn delete Clicked")
         
         delegate?.didTapDeleteButton()
     }

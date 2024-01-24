@@ -56,5 +56,6 @@ class GetMessageApiViewModel {
                 messagesData.remove(at: i)
             }
         }
+        removedMessagesArray.removeAll()
     }
 }
