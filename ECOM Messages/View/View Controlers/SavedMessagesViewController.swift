@@ -50,6 +50,11 @@ class SavedMessagesViewController: UIViewController, SaveMessageDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+        
+        if messageSavedViewModel.savedMessages.count == 0 {
+            savedMessageState = .noResults
+        }
+        
         tableView.reloadData()
     }
 }

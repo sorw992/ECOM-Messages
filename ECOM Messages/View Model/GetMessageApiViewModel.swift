@@ -7,6 +7,7 @@ class GetMessageApiViewModel {
     
     var messagesData = [MessageItem]()
     var errorMessage = ""
+
     
     func fetchData(updateUI: @escaping ([MessageItem]?, String?) -> Void) {
         
@@ -44,5 +45,7 @@ class GetMessageApiViewModel {
         }
     }
     
-    
+    func refreshMessages() {
+        messagesData = syncSaveStatus(arr1: messagesData, arr2: SQLiteCommands.presentRows() ?? [], resetFirstArray: true)
+    }
 }

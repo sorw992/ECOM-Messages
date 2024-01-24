@@ -9,10 +9,13 @@ import UIKit
 
 class MessageResultFullTableViewCell: UITableViewCell {
     
+    // MARK: Outlets
     
     @IBOutlet weak var viewBackground: UIView!
     
-    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var cellBackgroundRightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var labelReadStatus: UILabel!
+    
     
     @IBOutlet weak var btnShare: UIButton!
     
@@ -20,21 +23,22 @@ class MessageResultFullTableViewCell: UITableViewCell {
     
     @IBOutlet weak var labelMessageText: UILabel!
     
-    
     @IBOutlet weak var imgArrowUpDownShowFullMessage: UIImageView!
     
- 
     @IBOutlet weak var msgImage: UIImageView!
     
-    @IBOutlet weak var labelReadStatus: UILabel!
+    @IBOutlet weak var btnSave: UIButton!
+    
+    @IBOutlet weak var btnCheckBox: UIButton!
+    
     
     // MARK: properties
-    
-    var indexPath: IndexPath?
     
     var messageItem: MessageItem?
     
     var saveMessageDelegate: SaveMessageDelegate?
+    
+    var indexPath: IndexPath?
     
     // MARK: actions
     @IBAction func didTapBtnSave(_ sender: UIButton) {
@@ -47,11 +51,27 @@ class MessageResultFullTableViewCell: UITableViewCell {
         print("btn share action")
     }
     
-    func configure(for messageItem: MessageItem) {
+    
+    @IBAction func btnCheckBox(_ sender: UIButton) {
+    }
+    
+    
+    // MARK: functions
+    func configure(for messageItem: MessageItem, messageResultState: MessageResultState) {
         
+        if messageResultState == .editMode {
+            btnCheckBox.isHidden = false
+            cellBackgroundRightConstraint.constant = 50
+        } else {
+            btnCheckBox.isHidden = true
+            cellBackgroundRightConstraint.constant = 0
+        }
+
         self.messageItem = messageItem
         
         backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
+        
+        viewBackground.layer.cornerRadius = 16
         
         selectionStyle = .none
         
@@ -75,6 +95,7 @@ class MessageResultFullTableViewCell: UITableViewCell {
             imgArrowUpDownShowFullMessage.image = UIImage(named: "arrowdownicon")
         }
         
+        
         labelMessageTitle.text = messageItem.title
         labelMessageText.text = messageItem.description
         
@@ -85,10 +106,11 @@ class MessageResultFullTableViewCell: UITableViewCell {
         
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        btnCheckBox.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

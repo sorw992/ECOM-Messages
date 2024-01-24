@@ -3,19 +3,13 @@
 
 import UIKit
 
-protocol BadgeChangeDelegate {
-    func userDidSeeMessage(badgeMinus: Int)
-    func passBadgeCount(count: Int)
-}
 
-protocol SaveMessageDelegate {
-    func btnSaveTapped(messageItem: MessageItem, index: Int)
-}
 
-class InboxViewController: UIViewController, SaveMessageDelegate {
-    
+class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var tableviewBottomConstaint: NSLayoutConstraint!
     
     var tableViewCellHeight: CGFloat = 0
     
@@ -27,6 +21,7 @@ class InboxViewController: UIViewController, SaveMessageDelegate {
 
     var messageResultState: MessageResultState = .noResults
     
+    let footerEditor = FooterEditor()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +45,20 @@ class InboxViewController: UIViewController, SaveMessageDelegate {
         
         createDatabaseTable()
         
-      
+        footerEditor.delegate = self
         
+        // setup table view long press
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
+        tableView.addGestureRecognizer(longPress)
     }
+   
+    
 
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+        getMessageViewModel.refreshMessages()
         tableView.reloadData()
-        print("hoy")
+        
     }
     
     // MARK: - SQLite Database
@@ -122,4 +123,39 @@ class InboxViewController: UIViewController, SaveMessageDelegate {
         }
     }
     
+    // MARK: Footer Editor delegate
+    func didTapDeleteButton() {
+        //print("aa")
+    }
+    
+    func didTapCancelButton() {
+        tableviewBottomConstaint.constant = 0
+        if getMessageViewModel.messagesData.count > 0 {
+            messageResultState = .results
+            tableView.reloadData()
+        }
+        
+    }
+    
+    // MARK: Table View long press gesture
+   
+    @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            let touchPoint = sender.location(in: tableView)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                
+                print("long press")
+                
+                
+                if getMessageViewModel.messagesData.count > 0 {
+                    messageResultState = .editMode
+                    tableviewBottomConstaint.constant = 50
+                    self.footerEditor.setupFooterEditor(view: self.view, navigationTitleText: "پیام های من")
+                }
+                
+                tableView.reloadData()
+                
+            }
+        }
+    }
 }

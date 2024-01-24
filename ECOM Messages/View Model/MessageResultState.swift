@@ -12,4 +12,5 @@ enum MessageResultState {
     case noResults
     case loading
     case results
+    case editMode
 }

@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoO-Cy-Pye">
-                        <rect key="frame" x="12" y="13" width="369" height="201"/>
+                        <rect key="frame" x="12" y="13" width="331" height="201"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۴۰۰/۱۰/۲۴ - ۱۰:۵۴" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAQ-tw-m1W">
-                                <rect key="frame" x="233" y="8" width="124" height="21"/>
+                                <rect key="frame" x="195" y="8" width="124" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="Tzb-ro-W7u"/>
                                     <constraint firstAttribute="height" constant="21" id="uDd-bI-7oR"/>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خوانده شده" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oa-hg-VV7">
-                                <rect key="frame" x="122" y="8" width="100" height="21"/>
+                                <rect key="frame" x="84" y="8" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4JB-m0-F0v"/>
                                     <constraint firstAttribute="width" constant="100" id="gZW-6U-zpQ"/>
@@ -63,29 +63,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="تیتر پیام" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2d-iL-vWQ">
-                                <rect key="frame" x="13" y="44" width="344" height="23"/>
+                                <rect key="frame" x="13" y="44" width="306" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متن پیام" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymN-VE-PNN">
-                                <rect key="frame" x="13" y="70.666666666666686" width="282" height="89.333333333333314"/>
+                                <rect key="frame" x="13" y="70.666666666666686" width="244" height="89.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hko-IM-4OC">
-                                <rect key="frame" x="315" y="84.666666666666671" width="42" height="44.000000000000014"/>
+                                <rect key="frame" x="277" y="84.666666666666671" width="42" height="44.000000000000014"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0Vh-wx-P8S"/>
                                     <constraint firstAttribute="width" constant="42" id="8iV-lX-v1p"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qr4-fN-GPf">
-                                <rect key="frame" x="6" y="160" width="351" height="41"/>
+                                <rect key="frame" x="6" y="160" width="313" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcE-f4-rPT">
-                                        <rect key="frame" x="0.0" y="8" width="351" height="1"/>
+                                        <rect key="frame" x="0.0" y="8" width="313" height="1"/>
                                         <color key="backgroundColor" red="0.67854899170000005" green="0.68211561440000001" blue="0.6980413795" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="rUc-Qb-L0K"/>
@@ -112,7 +112,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اعتبار پیام" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-oO-r2h">
-                                        <rect key="frame" x="281" y="14" width="70" height="21"/>
+                                        <rect key="frame" x="243" y="14" width="70" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Xp9-mx-sXV"/>
                                             <constraint firstAttribute="height" constant="21" id="bYT-pE-fHT"/>
@@ -161,18 +161,36 @@
                             <constraint firstItem="Hko-IM-4OC" firstAttribute="top" secondItem="d2d-iL-vWQ" secondAttribute="bottom" constant="17.670000000000002" id="xEN-7g-fAf"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-Rd-tJg">
+                        <rect key="frame" x="345" y="91" width="47" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="42E-91-nAW"/>
+                            <constraint firstAttribute="width" constant="47" id="4KW-FV-x8G"/>
+                            <constraint firstAttribute="height" constant="45" id="Akr-0R-gg7"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="uQ9-Il-6Pu"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="checkboxEmpty"/>
+                        <connections>
+                            <action selector="btnCheckBox:" destination="wbG-L0-5Pv" eventType="touchUpInside" id="ENb-eN-6oy"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.94913715119999997" green="0.96463960410000005" blue="0.96862822770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstItem="MoO-Cy-Pye" firstAttribute="top" secondItem="R2S-sW-Ek6" secondAttribute="top" constant="13" id="8WX-7M-gbK"/>
-                    <constraint firstAttribute="trailing" secondItem="MoO-Cy-Pye" secondAttribute="trailing" constant="12" id="Hs5-bR-3c2"/>
+                    <constraint firstAttribute="trailing" secondItem="MoO-Cy-Pye" secondAttribute="trailing" constant="50" id="Hs5-bR-3c2"/>
                     <constraint firstItem="MoO-Cy-Pye" firstAttribute="leading" secondItem="R2S-sW-Ek6" secondAttribute="leading" constant="12" id="VPh-FW-nOH"/>
+                    <constraint firstItem="tbb-Rd-tJg" firstAttribute="centerY" secondItem="R2S-sW-Ek6" secondAttribute="centerY" id="aOX-Bh-1zW"/>
+                    <constraint firstAttribute="trailing" secondItem="tbb-Rd-tJg" secondAttribute="trailing" constant="1" id="fkb-VF-Ezv"/>
                     <constraint firstAttribute="bottom" secondItem="MoO-Cy-Pye" secondAttribute="bottom" constant="13" id="jOR-4Z-aAg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btnCheckBox" destination="tbb-Rd-tJg" id="MS2-1g-jb0"/>
                 <outlet property="btnSave" destination="VCb-6R-mZp" id="jof-0i-pAb"/>
                 <outlet property="btnShare" destination="p6n-dU-xVS" id="GbO-Av-EDF"/>
+                <outlet property="cellBackgroundRightConstraint" destination="Hs5-bR-3c2" id="2Je-AG-OPK"/>
                 <outlet property="imgArrowUpDownShowFullMessage" destination="joh-cg-BZ5" id="EdJ-1H-SHU"/>
                 <outlet property="labelMessageText" destination="ymN-VE-PNN" id="7sl-DZ-HaE"/>
                 <outlet property="labelMessageTitle" destination="d2d-iL-vWQ" id="efr-tj-ugD"/>
@@ -184,6 +202,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkboxEmpty" width="30" height="30"/>
         <image name="saveicon" width="30" height="30"/>
         <image name="shareicon" width="30" height="30"/>
     </resources>

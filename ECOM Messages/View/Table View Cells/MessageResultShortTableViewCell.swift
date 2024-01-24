@@ -15,6 +15,7 @@ class MessageResultShortTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewBackground: UIView!
     
+    @IBOutlet weak var cellBackgroundRightConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelReadStatus: UILabel!
     
     
@@ -29,6 +30,9 @@ class MessageResultShortTableViewCell: UITableViewCell {
     @IBOutlet weak var msgImage: UIImageView!
     
     @IBOutlet weak var btnSave: UIButton!
+    
+    @IBOutlet weak var btnCheckBox: UIButton!
+    
     
     // MARK: properties
     
@@ -49,8 +53,21 @@ class MessageResultShortTableViewCell: UITableViewCell {
         print("btn share action")
     }
     
+    
+    @IBAction func btnCheckBox(_ sender: UIButton) {
+    }
+    
+    
     // MARK: functions
-    func configure(for messageItem: MessageItem) {
+    func configure(for messageItem: MessageItem, messageResultState: MessageResultState) {
+        
+        if messageResultState == .editMode {
+            btnCheckBox.isHidden = false
+            cellBackgroundRightConstraint.constant = 50
+        } else {
+            btnCheckBox.isHidden = true
+            cellBackgroundRightConstraint.constant = 0
+        }
 
         self.messageItem = messageItem
         
@@ -94,6 +111,8 @@ class MessageResultShortTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        btnCheckBox.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

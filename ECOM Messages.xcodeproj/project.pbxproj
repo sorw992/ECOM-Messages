@@ -44,6 +44,8 @@
 		B0DB6F2E2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DB6F2D2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib */; };
 		B0DB6F302B5D80B40047DDB5 /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F2F2B5D80B40047DDB5 /* UIImageView+extension.swift */; };
 		B0DB6F322B5DA2090047DDB5 /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F312B5DA2090047DDB5 /* ViewUtilities.swift */; };
+		B0DE85C92B610E520032A858 /* FooterEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE85C82B610E510032A858 /* FooterEditor.swift */; };
+		B0DE85CC2B611FC60032A858 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE85CB2B611FC60032A858 /* Protocols.swift */; };
 		BE15AABA612D3590BDF46610 /* Pods_ECOM_Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EDE15912B1EE6A07E4C0BB /* Pods_ECOM_Messages.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		B0DB6F2D2B5D6CBF0047DDB5 /* MessageResultFullTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageResultFullTableViewCell.xib; sourceTree = "<group>"; };
 		B0DB6F2F2B5D80B40047DDB5 /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		B0DB6F312B5DA2090047DDB5 /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
+		B0DE85C82B610E510032A858 /* FooterEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterEditor.swift; sourceTree = "<group>"; };
+		B0DE85CB2B611FC60032A858 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D40F03DE06646A4E62098128 /* Pods-ECOM Messages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECOM Messages.release.xcconfig"; path = "Target Support Files/Pods-ECOM Messages/Pods-ECOM Messages.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				B0DB6F232B5D675D0047DDB5 /* extensions */,
+				B0DE85CA2B611FB70032A858 /* protocols */,
 				B01BD2012B5A7084009FE7DC /* Model */,
 				B065B2902B5924060047F05B /* View */,
 				B01BD2072B5A739A009FE7DC /* View Model */,
@@ -265,9 +270,18 @@
 		B0DB6F332B5DB00D0047DDB5 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				B0DE85C82B610E510032A858 /* FooterEditor.swift */,
 				B065B2912B5928F20047F05B /* CustomNavBar.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		B0DE85CA2B611FB70032A858 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B0DE85CB2B611FC60032A858 /* Protocols.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 		EB89A0EBF802B5AF7F5C8C45 /* Pods */ = {
@@ -406,6 +420,7 @@
 			files = (
 				B0815B6A2B5FE49E00B618E2 /* SavedMessageState.swift in Sources */,
 				B035C2EA2B5EEE9100380DE0 /* NetworkManager.swift in Sources */,
+				B0DE85CC2B611FC60032A858 /* Protocols.swift in Sources */,
 				B0815B6C2B6002CF00B618E2 /* SQLiteDatabase.swift in Sources */,
 				B035C2E42B5EC30C00380DE0 /* MessageResultState.swift in Sources */,
 				B01BD2062B5A71F6009FE7DC /* APIURL.swift in Sources */,
@@ -418,6 +433,7 @@
 				B0DB6F222B5D0EFE0047DDB5 /* MessageResultShortTableViewCell.swift in Sources */,
 				B0815B6E2B60038900B618E2 /* SQLiteCommands.swift in Sources */,
 				B0DB6F252B5D67730047DDB5 /* String+extension.swift in Sources */,
+				B0DE85C92B610E520032A858 /* FooterEditor.swift in Sources */,
 				B0815B742B60523500B618E2 /* TableViewCellIdentifiers.swift in Sources */,
 				B0B4B8D22B5C5CCF00717263 /* LZViewPager.swift in Sources */,
 				B0815B702B600C5000B618E2 /* MessageSavedViewModel.swift in Sources */,

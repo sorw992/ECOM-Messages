@@ -21,6 +21,8 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .results:
             return getMessageViewModel.messagesData.count
+        case .editMode:
+            return getMessageViewModel.messagesData.count
         }
     }
     
@@ -43,7 +45,7 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             
             if getMessageViewModel.messagesData[indexPath.row].fullText {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageFullCell, for: indexPath) as! MessageResultFullTableViewCell
-                cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
+                cell.configure(for: getMessageViewModel.messagesData[indexPath.row], messageResultState: .results)
                 cell.saveMessageDelegate = self
                 
                 cell.indexPath = indexPath
@@ -54,7 +56,7 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageShortCell, for: indexPath) as! MessageResultShortTableViewCell
                 
-                cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
+                cell.configure(for: getMessageViewModel.messagesData[indexPath.row], messageResultState: .results)
                 cell.saveMessageDelegate = self
                 
                 cell.indexPath = indexPath
@@ -65,6 +67,29 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             
+        case .editMode:
+            if getMessageViewModel.messagesData[indexPath.row].fullText {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageFullCell, for: indexPath) as! MessageResultFullTableViewCell
+                cell.configure(for: getMessageViewModel.messagesData[indexPath.row], messageResultState: .editMode)
+                cell.saveMessageDelegate = self
+                
+                cell.indexPath = indexPath
+                
+                return cell
+                
+            } else {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageShortCell, for: indexPath) as! MessageResultShortTableViewCell
+                
+                cell.configure(for: getMessageViewModel.messagesData[indexPath.row], messageResultState: .editMode)
+                cell.saveMessageDelegate = self
+                
+                cell.indexPath = indexPath
+                
+                
+                
+                return cell
+            }
         }
         
         
@@ -82,6 +107,16 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             return 113
             
         case .results:
+            if getMessageViewModel.messagesData[indexPath.row].fullText == true {
+                tableViewCellHeight = calculateCellHeight(title: getMessageViewModel.messagesData[indexPath.row].title ?? "", description: getMessageViewModel.messagesData[indexPath.row].description ?? "", fullDescriptionCell: true)
+                
+                return tableViewCellHeight
+            } else {
+                tableViewCellHeight = calculateCellHeight(title: getMessageViewModel.messagesData[indexPath.row].title ?? "", description: getMessageViewModel.messagesData[indexPath.row].description ?? "", fullDescriptionCell: false)
+                
+                return tableViewCellHeight
+            }
+        case .editMode:
             if getMessageViewModel.messagesData[indexPath.row].fullText == true {
                 tableViewCellHeight = calculateCellHeight(title: getMessageViewModel.messagesData[indexPath.row].title ?? "", description: getMessageViewModel.messagesData[indexPath.row].description ?? "", fullDescriptionCell: true)
                 
@@ -121,6 +156,8 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             tableView.reloadData()
+        case .editMode:
+            break
         }
     }
 }
