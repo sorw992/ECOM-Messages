@@ -96,7 +96,7 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
                 weakSelf.messageResultState = .noResults
                 weakSelf.tableView.reloadData()
                 
-                alertViewGetApiError(viewController: weakSelf, title: "Error", message: "Try Again") {
+                alertViewGetApiError(viewController: weakSelf, title: "Error", message: error ?? "Try Again") {
                     self?.getMessagesFromApi()
                     
                     self?.tableView.reloadData()
