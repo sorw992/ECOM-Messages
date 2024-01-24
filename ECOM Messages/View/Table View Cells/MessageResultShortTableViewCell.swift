@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class MessageResultShortTableViewCell: UITableViewCell {
     
     // MARK: Outlets
@@ -32,10 +34,14 @@ class MessageResultShortTableViewCell: UITableViewCell {
     
     var messageItem: MessageItem?
     
+    var saveMessageDelegate: SaveMessageDelegate?
+    
+    var indexPath: IndexPath?
+    
     // MARK: actions
     @IBAction func didTapBtnSave(_ sender: UIButton) {
         if let messageItem {
-            SQLiteCommands.insertRow(messageItem)
+            saveMessageDelegate?.btnSaveTapped(messageItem: messageItem, index: (indexPath?.row)!)
         }
     }
     
@@ -46,7 +52,6 @@ class MessageResultShortTableViewCell: UITableViewCell {
     // MARK: functions
     func configure(for messageItem: MessageItem) {
 
-        
         self.messageItem = messageItem
         
         backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
@@ -54,6 +59,12 @@ class MessageResultShortTableViewCell: UITableViewCell {
         viewBackground.layer.cornerRadius = 16
         
         selectionStyle = .none
+        
+        if messageItem.isSaved {
+            btnSave.setImage(UIImage(named: "saveiconon"), for: .normal)
+        } else {
+            btnSave.setImage(UIImage(named: "saveicon"), for: .normal)
+        }
         
         if messageItem.unread == true {
             self.viewBackground?.backgroundColor = .white

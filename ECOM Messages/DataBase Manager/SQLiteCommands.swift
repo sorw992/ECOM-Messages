@@ -18,49 +18,6 @@ class SQLiteCommands {
     static let photo = Expression<Data>("photo")
     
     // Creating Table
-    static func createTable1() {
-        guard let database = SQLiteDatabase.sharedInstance.database else {
-            print("Datastore connection error")
-            return
-        }
-        
-        do {
-            // ifNotExists: true - Will NOT create a table if it already exists
-            try database.run(table.create(ifNotExists: true) { table in
-                table.column(uuid, primaryKey: true)
-                table.column(title)
-                table.column(description1)
-                table.column(imageUrl)
-                table.column(photo)
-            })
-        } catch {
-            print("Table already exists: \(error)")
-        }
-    }
-    
-    // Inserting Row
-    
-    static func insertRow1(_ messageValues: MessageItem) -> Bool? {
-        guard let database = SQLiteDatabase.sharedInstance.database else {
-            print("Datastore connection error")
-            return nil
-        }
-        
-        do {
-            
-            try database.run(table.insert(title <- messageValues.title!, description1 <- messageValues.description!, imageUrl <- messageValues.imageUrl!,  photo <- messageValues.imageData))
-            return true
-        } catch let Result.error(message, code, statement) where code == SQLITE_CONSTRAINT {
-            print("Insert row failed: \(message), in \(String(describing: statement))")
-            return false
-        } catch let error {
-            print("Insertion failed: \(error)")
-            return false
-        }
-    }
-    
-    
-    // Creating Table
     static func createTable() {
         guard let database = SQLiteDatabase.sharedInstance.database else {
             print("Datastore connection error")
@@ -130,7 +87,7 @@ class SQLiteCommands {
                
                 
                 // Create object
-                let messageObject = MessageItem(title: titleValue, description: descriptionValue, imageUrl: imageUrlValue, imageData: photoValue, uuid: uuidValue, unread: false, fullText: false)
+                let messageObject = MessageItem(title: titleValue, description: descriptionValue, imageUrl: imageUrlValue, imageData: photoValue, uuid: uuidValue, unread: false, fullText: false, isSaved: true)
                 
                 // Add object to an array
                 messageArray.append(messageObject)
@@ -140,7 +97,9 @@ class SQLiteCommands {
         } catch {
             print("Present row error: \(error)")
         }
-        return messageArray
+        let sortedMessageArray = sortMessagesArray(messages: messageArray)
+
+        return sortedMessageArray
     }
     
     

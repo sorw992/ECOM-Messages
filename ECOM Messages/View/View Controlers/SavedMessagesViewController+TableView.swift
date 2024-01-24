@@ -33,6 +33,8 @@ extension SavedMessagesViewController {
                 let data = messageSavedViewModel.savedMessages[indexPath.row].imageData
                 cell.msgImage.image = UIImage(data: data)
                 
+                cell.saveMessageDelegate = self
+                
                 return cell
                 
             } else {
@@ -42,7 +44,10 @@ extension SavedMessagesViewController {
                 
                 let data = messageSavedViewModel.savedMessages[indexPath.row].imageData
                 cell.msgImage.image = UIImage(data: data)
-                    
+                cell.indexPath = indexPath
+                
+                cell.saveMessageDelegate = self
+                
                 return cell
             }
         }

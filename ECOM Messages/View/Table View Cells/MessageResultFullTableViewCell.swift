@@ -28,13 +28,38 @@ class MessageResultFullTableViewCell: UITableViewCell {
     
     @IBOutlet weak var labelReadStatus: UILabel!
     
+    // MARK: properties
+    
+    var indexPath: IndexPath?
+    
+    var messageItem: MessageItem?
+    
+    var saveMessageDelegate: SaveMessageDelegate?
+    
+    // MARK: actions
+    @IBAction func didTapBtnSave(_ sender: UIButton) {
+        if let messageItem {
+            saveMessageDelegate?.btnSaveTapped(messageItem: messageItem, index: (indexPath?.row)!)
+        }
+    }
+    
+    @IBAction func didTapBtnShare(_ sender: UIButton) {
+        print("btn share action")
+    }
+    
     func configure(for messageItem: MessageItem) {
+        
+        self.messageItem = messageItem
         
         backgroundColor = UIColor(red: 244/255.0, green: 249/255.0, blue: 250/255.0, alpha: 1.0)
         
-       
-        
         selectionStyle = .none
+        
+        if messageItem.isSaved {
+            btnSave.setImage(UIImage(named: "saveiconon"), for: .normal)
+        } else {
+            btnSave.setImage(UIImage(named: "saveicon"), for: .normal)
+        }
         
         if messageItem.unread == true {
             self.viewBackground?.backgroundColor = .white

@@ -31,7 +31,13 @@ class GetMessageViewModel {
                     
                 }
                 
+                var uuidsSaved = SQLiteCommands.presentRows() ?? []
+                
+                
                 self.messagesData = sortMessagesArray(messages: messages)
+
+                
+                self.messagesData = syncSaveStatus(arr1: self.messagesData, arr2: uuidsSaved, resetFirstArray: false)
                 
                 DispatchQueue.main.async {
                     updateUI(messages, nil)
@@ -39,4 +45,6 @@ class GetMessageViewModel {
             }
         }
     }
+    
+    
 }

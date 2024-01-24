@@ -4,7 +4,7 @@
 
 import UIKit
 
-class SavedMessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SavedMessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SaveMessageDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,6 +20,19 @@ class SavedMessagesViewController: UIViewController, UITableViewDelegate, UITabl
         if messageSavedViewModel.savedMessages.count != 0 {
             savedMessageState = .results
         }
+    }
+    
+    // MARK: table view cell delegate
+    func btnSaveTapped(messageItem: MessageItem, index: Int) {
+        
+        SQLiteCommands.deleteRow(messageId: messageItem.uuid ?? "")
+        
+        messageSavedViewModel.loadDataFromSQLiteDatabase()
+        
+        if messageSavedViewModel.savedMessages.count == 0 {
+            savedMessageState = .noResults
+        }
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {

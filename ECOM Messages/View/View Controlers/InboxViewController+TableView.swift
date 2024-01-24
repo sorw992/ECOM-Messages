@@ -44,6 +44,9 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
             if getMessageViewModel.messagesData[indexPath.row].fullText {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageFullCell, for: indexPath) as! MessageResultFullTableViewCell
                 cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
+                cell.saveMessageDelegate = self
+                
+                cell.indexPath = indexPath
                 
                 return cell
                 
@@ -52,6 +55,11 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageShortCell, for: indexPath) as! MessageResultShortTableViewCell
                 
                 cell.configure(for: getMessageViewModel.messagesData[indexPath.row])
+                cell.saveMessageDelegate = self
+                
+                cell.indexPath = indexPath
+                
+                
                 
                 return cell
             }

@@ -26,6 +26,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="shareicon"/>
+                                <connections>
+                                    <action selector="didTapBtnShare:" destination="OGK-m1-5NC" eventType="touchUpInside" id="AzN-dv-JVp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۴۰۰/۱۰/۲۴ - ۱۰:۵۴" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUB-zA-563">
                                 <rect key="frame" x="261" y="8" width="124" height="21"/>
@@ -45,6 +48,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="saveicon"/>
+                                <connections>
+                                    <action selector="didTapBtnSave:" destination="OGK-m1-5NC" eventType="touchUpInside" id="Afb-JJ-evo"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l5J-DY-fo4">
                                 <rect key="frame" x="56" y="54" width="287" height="116"/>

@@ -8,11 +8,15 @@ protocol BadgeChangeDelegate {
     func passBadgeCount(count: Int)
 }
 
-class InboxViewController: UIViewController {
+protocol SaveMessageDelegate {
+    func btnSaveTapped(messageItem: MessageItem, index: Int)
+}
+
+class InboxViewController: UIViewController, SaveMessageDelegate {
+    
     
     @IBOutlet weak var tableView: UITableView!
     
-   
     var tableViewCellHeight: CGFloat = 0
     
      var getMessageViewModel = GetMessageViewModel()
@@ -20,7 +24,7 @@ class InboxViewController: UIViewController {
     private var messageSavedViewModel = MessageSavedViewModel()
     
      var delegate: BadgeChangeDelegate?
-    
+
     var messageResultState: MessageResultState = .noResults
     
         
@@ -46,24 +50,42 @@ class InboxViewController: UIViewController {
         
         createDatabaseTable()
         
+      
+        
     }
-    
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         loadData()
         tableView.reloadData()
+        print("hoy")
     }
     
     // MARK: - SQLite Database
     private func loadData() {
         messageSavedViewModel.loadDataFromSQLiteDatabase()
+
+        getMessageViewModel.messagesData = syncSaveStatus(arr1: getMessageViewModel.messagesData, arr2:  messageSavedViewModel.savedMessages, resetFirstArray: true)
     }
     
     // MARK: - Connect to database and create table.
     private func createDatabaseTable() {
         let database = SQLiteDatabase.sharedInstance
         database.createTable()
+    }
+    
+    // MARK: table view cell delegate
+    func btnSaveTapped(messageItem: MessageItem, index: Int) {
+       
+        // update isSaved property of MessageItem
+        if getMessageViewModel.messagesData[index].isSaved == false {
+            getMessageViewModel.messagesData[index].isSaved = true
+            SQLiteCommands.insertRow(messageItem)
+        } else {
+            getMessageViewModel.messagesData[index].isSaved = false
+            SQLiteCommands.deleteRow(messageId: messageItem.uuid ?? "")
+        }
+        messageSavedViewModel.loadDataFromSQLiteDatabase()
+        tableView.reloadData()
     }
     
     private func getMessages() {
