@@ -8,6 +8,7 @@ class GetMessageApiViewModel {
     var messagesData = [MessageItem]()
     var errorMessage = ""
 
+    var removedMessagesArray = [MessageItem]()
     
     func fetchData(updateUI: @escaping ([MessageItem]?, String?) -> Void) {
         
@@ -47,5 +48,13 @@ class GetMessageApiViewModel {
     
     func refreshMessages() {
         messagesData = syncSaveStatus(arr1: messagesData, arr2: SQLiteCommands.presentRows() ?? [], resetFirstArray: true)
+    }
+    
+    func removeSelectedElementsFromMessagesArray() {
+        for i in (0..<messagesData.count).reversed() {
+            if let _ = removedMessagesArray.lastIndex(where: {$0.uuid == messagesData[i].uuid}) {
+                messagesData.remove(at: i)
+            }
+        }
     }
 }

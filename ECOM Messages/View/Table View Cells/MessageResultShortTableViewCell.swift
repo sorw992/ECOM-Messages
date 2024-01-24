@@ -40,6 +40,8 @@ class MessageResultShortTableViewCell: UITableViewCell {
     
     var saveMessageDelegate: SaveMessageDelegate?
     
+    var checkboxDelegate: CheckBoxDelegate?
+    
     var indexPath: IndexPath?
     
     // MARK: actions
@@ -55,6 +57,10 @@ class MessageResultShortTableViewCell: UITableViewCell {
     
     
     @IBAction func btnCheckBox(_ sender: UIButton) {
+        if var messageItem {
+            messageItem.checked = !messageItem.checked
+            checkboxDelegate?.checkBoxTapped(messageItem: messageItem, checked: messageItem.checked ?? false, index: (indexPath?.row)!)
+        }
     }
     
     
@@ -81,6 +87,12 @@ class MessageResultShortTableViewCell: UITableViewCell {
             btnSave.setImage(UIImage(named: "saveiconon"), for: .normal)
         } else {
             btnSave.setImage(UIImage(named: "saveicon"), for: .normal)
+        }
+        
+        if messageItem.checked {
+            btnCheckBox.setImage(UIImage(named: "checkboxFilled"), for: .normal)
+        } else {
+            btnCheckBox.setImage(UIImage(named: "checkboxEmpty"), for: .normal)
         }
         
         if messageItem.unread == true {

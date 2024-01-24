@@ -5,7 +5,7 @@ import UIKit
 
 
 
-class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDelegate {
+class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDelegate, CheckBoxDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -123,17 +123,41 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
         }
     }
     
+    func removeSelectedElementsFromMessagesArray() {
+        for i in (0..<getMessageViewModel.messagesData.count).reversed() {
+            if let _ = getMessageViewModel.removedMessagesArray.lastIndex(where: {$0.uuid == getMessageViewModel.messagesData[i].uuid}) {
+                getMessageViewModel.messagesData.remove(at: i)
+            }
+        }
+    }
+    
     // MARK: Footer Editor delegate
     func didTapDeleteButton() {
-        //print("aa")
+        removeSelectedElementsFromMessagesArray()
+    
+        tableView.reloadData()
+        
     }
     
     func didTapCancelButton() {
+        getMessageViewModel.removedMessagesArray = []
         tableviewBottomConstaint.constant = 0
         if getMessageViewModel.messagesData.count > 0 {
             messageResultState = .results
             tableView.reloadData()
         }
+        
+    }
+    
+    // MARK: checkbox delegate
+    func checkBoxTapped(messageItem: MessageItem, checked: Bool, index: Int) {
+        
+        getMessageViewModel.messagesData[index].checked = checked
+        
+        // add to removedMessagesArray
+        getMessageViewModel.removedMessagesArray.append(messageItem)
+        print(getMessageViewModel.removedMessagesArray)
+        tableView.reloadData()
         
     }
     

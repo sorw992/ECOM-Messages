@@ -83,7 +83,7 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.configure(for: getMessageViewModel.messagesData[indexPath.row], messageResultState: .editMode)
                 cell.saveMessageDelegate = self
-                
+                cell.checkboxDelegate = self
                 cell.indexPath = indexPath
                 
                 

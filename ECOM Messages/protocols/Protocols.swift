@@ -16,3 +16,7 @@ protocol BadgeChangeDelegate {
 protocol SaveMessageDelegate {
     func btnSaveTapped(messageItem: MessageItem, index: Int)
 }
+
+protocol CheckBoxDelegate {
+    func checkBoxTapped(messageItem: MessageItem, checked: Bool, index: Int)
+}

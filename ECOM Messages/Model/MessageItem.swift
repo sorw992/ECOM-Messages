@@ -16,6 +16,7 @@ struct MessageItem: Codable {
     var unread: Bool?
     var fullText = false
     var isSaved = false
+    var checked = false
     
     private enum CodingKeys: String, CodingKey {
             case title, description, imageUrl = "image", uuid, unread
