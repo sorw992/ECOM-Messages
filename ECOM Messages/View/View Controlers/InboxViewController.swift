@@ -123,17 +123,11 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
         }
     }
     
-    func removeSelectedElementsFromMessagesArray() {
-        for i in (0..<getMessageViewModel.messagesData.count).reversed() {
-            if let _ = getMessageViewModel.removedMessagesArray.lastIndex(where: {$0.uuid == getMessageViewModel.messagesData[i].uuid}) {
-                getMessageViewModel.messagesData.remove(at: i)
-            }
-        }
-    }
+    
     
     // MARK: Footer Editor delegate
     func didTapDeleteButton() {
-        removeSelectedElementsFromMessagesArray()
+        getMessageViewModel.removeSelectedElementsFromMessagesArray()
     
         tableView.reloadData()
         
