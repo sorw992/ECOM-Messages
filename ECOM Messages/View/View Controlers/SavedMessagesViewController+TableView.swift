@@ -29,7 +29,7 @@ extension SavedMessagesViewController: UITableViewDelegate, UITableViewDataSourc
             if messageSavedViewModel.savedMessages[indexPath.row].fullText {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageFullCell, for: indexPath) as! MessageResultFullTableViewCell
                 cell.configure(for: messageSavedViewModel.savedMessages[indexPath.row], messageResultState: .results)
-                
+                cell.indexPath = indexPath
                 let data = messageSavedViewModel.savedMessages[indexPath.row].imageData
                 cell.msgImage.image = UIImage(data: data)
                 
