@@ -52,6 +52,10 @@ class GetMessageApiViewModel {
     
     func clearSelectedElementsForDelete() {
         removedMessagesArray.removeAll()
+        
+        for i in messagesData.indices {
+            messagesData[i].checked = false
+        }
     }
     
     func removeSelectedElementsFromMessagesArray() {
