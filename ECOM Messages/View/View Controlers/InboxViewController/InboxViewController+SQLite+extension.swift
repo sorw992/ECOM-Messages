@@ -25,7 +25,7 @@ extension InboxViewController: SaveMessageDelegate {
         // update isSaved property of MessageItem
         if getMessageViewModel.messagesData[index].isSaved == false {
             getMessageViewModel.messagesData[index].isSaved = true
-            SQLiteCommands.insertRow(messageItem)
+            let _ = SQLiteCommands.insertRow(messageItem)
         } else {
             getMessageViewModel.messagesData[index].isSaved = false
             SQLiteCommands.deleteRow(messageId: messageItem.uuid ?? "")

@@ -31,7 +31,7 @@ class GetMessageApiViewModel {
                     
                 }
                 
-                var uuidsSaved = SQLiteCommands.presentRows() ?? []
+                let uuidsSaved = SQLiteCommands.presentRows() ?? []
                 
                 
                 self.messagesData = sortMessagesArray(messages: messages)

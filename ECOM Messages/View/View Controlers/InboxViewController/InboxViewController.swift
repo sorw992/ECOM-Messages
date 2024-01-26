@@ -83,7 +83,7 @@ class InboxViewController: UIViewController {
     @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             let touchPoint = sender.location(in: tableView)
-            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+            if tableView.indexPathForRow(at: touchPoint) != nil {
                 
                 if getMessageViewModel.messagesData.count > 0 {
                     messageResultState = .editMode

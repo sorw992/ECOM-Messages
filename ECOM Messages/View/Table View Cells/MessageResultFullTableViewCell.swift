@@ -57,7 +57,7 @@ class MessageResultFullTableViewCell: UITableViewCell {
     @IBAction func btnCheckBox(_ sender: UIButton) {
         if var messageItem {
             messageItem.checked = !messageItem.checked
-            checkboxDelegate?.checkBoxTapped(messageItem: messageItem, checked: messageItem.checked ?? false, index: (indexPath?.row)!)
+            checkboxDelegate?.checkBoxTapped(messageItem: messageItem, checked: messageItem.checked, index: (indexPath?.row)!)
         }
     }
     
