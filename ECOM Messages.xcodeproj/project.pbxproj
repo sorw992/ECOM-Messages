@@ -18,6 +18,9 @@
 		B035C2E82B5EC80800380DE0 /* LoadingMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B035C2E72B5EC80800380DE0 /* LoadingMessageTableViewCell.xib */; };
 		B035C2EA2B5EEE9100380DE0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B035C2E92B5EEE9100380DE0 /* NetworkManager.swift */; };
 		B035C2EC2B5F015700380DE0 /* MessageResultShortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B035C2EB2B5F015700380DE0 /* MessageResultShortTableViewCell.xib */; };
+		B05860972B63D7960016C864 /* InboxViewController+CheckBox+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05860962B63D7960016C864 /* InboxViewController+CheckBox+extension.swift */; };
+		B05860992B63D8A50016C864 /* InboxViewController+FooterEditor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05860982B63D8A50016C864 /* InboxViewController+FooterEditor+extension.swift */; };
+		B058609D2B63DA8E0016C864 /* InboxViewController+SQLite+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058609C2B63DA8E0016C864 /* InboxViewController+SQLite+extension.swift */; };
 		B065B28F2B59231C0047F05B /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B28E2B59231C0047F05B /* InboxViewController.swift */; };
 		B065B2922B5928F20047F05B /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B065B2912B5928F20047F05B /* CustomNavBar.swift */; };
 		B0815B6A2B5FE49E00B618E2 /* SavedMessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0815B692B5FE49E00B618E2 /* SavedMessageState.swift */; };
@@ -37,7 +40,7 @@
 		B0B4B8D62B5C609D00717263 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4B8D52B5C609D00717263 /* MainViewController.swift */; };
 		B0B4B8D82B5C660600717263 /* SavedMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */; };
 		B0DB6F1E2B5CFCB40047DDB5 /* BadgeGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = B0DB6F1D2B5CFCB40047DDB5 /* BadgeGenerator */; };
-		B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */; };
+		B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView+extension.swift */; };
 		B0DB6F222B5D0EFE0047DDB5 /* MessageResultShortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F212B5D0EFE0047DDB5 /* MessageResultShortTableViewCell.swift */; };
 		B0DB6F252B5D67730047DDB5 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F242B5D67730047DDB5 /* String+extension.swift */; };
 		B0DB6F272B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DB6F262B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift */; };
@@ -63,6 +66,9 @@
 		B035C2E72B5EC80800380DE0 /* LoadingMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingMessageTableViewCell.xib; sourceTree = "<group>"; };
 		B035C2E92B5EEE9100380DE0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B035C2EB2B5F015700380DE0 /* MessageResultShortTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageResultShortTableViewCell.xib; sourceTree = "<group>"; };
+		B05860962B63D7960016C864 /* InboxViewController+CheckBox+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InboxViewController+CheckBox+extension.swift"; sourceTree = "<group>"; };
+		B05860982B63D8A50016C864 /* InboxViewController+FooterEditor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InboxViewController+FooterEditor+extension.swift"; sourceTree = "<group>"; };
+		B058609C2B63DA8E0016C864 /* InboxViewController+SQLite+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InboxViewController+SQLite+extension.swift"; sourceTree = "<group>"; };
 		B065B28E2B59231C0047F05B /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		B065B2912B5928F20047F05B /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		B0815B692B5FE49E00B618E2 /* SavedMessageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMessageState.swift; sourceTree = "<group>"; };
@@ -83,7 +89,7 @@
 		B0B4B8D12B5C5CCF00717263 /* LZViewPagerContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZViewPagerContent.swift; sourceTree = "<group>"; };
 		B0B4B8D52B5C609D00717263 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMessagesViewController.swift; sourceTree = "<group>"; };
-		B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InboxViewController+TableView.swift"; sourceTree = "<group>"; };
+		B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InboxViewController+TableView+extension.swift"; sourceTree = "<group>"; };
 		B0DB6F212B5D0EFE0047DDB5 /* MessageResultShortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResultShortTableViewCell.swift; sourceTree = "<group>"; };
 		B0DB6F242B5D67730047DDB5 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		B0DB6F262B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResultFullTableViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +166,27 @@
 				B035C2D72B5E60E000380DE0 /* Utilities.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B058609A2B63D9120016C864 /* InboxViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B065B28E2B59231C0047F05B /* InboxViewController.swift */,
+				B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView+extension.swift */,
+				B05860962B63D7960016C864 /* InboxViewController+CheckBox+extension.swift */,
+				B05860982B63D8A50016C864 /* InboxViewController+FooterEditor+extension.swift */,
+				B058609C2B63DA8E0016C864 /* InboxViewController+SQLite+extension.swift */,
+			);
+			path = InboxViewController;
+			sourceTree = "<group>";
+		};
+		B058609B2B63D92E0016C864 /* SaveMessagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */,
+				B0815B712B60468C00B618E2 /* SavedMessagesViewController+TableView.swift */,
+			);
+			path = SaveMessagesViewController;
 			sourceTree = "<group>";
 		};
 		B065B2902B5924060047F05B /* View */ = {
@@ -244,10 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				B0B4B8D52B5C609D00717263 /* MainViewController.swift */,
-				B065B28E2B59231C0047F05B /* InboxViewController.swift */,
-				B0DB6F1F2B5D04640047DDB5 /* InboxViewController+TableView.swift */,
-				B0B4B8D72B5C660600717263 /* SavedMessagesViewController.swift */,
-				B0815B712B60468C00B618E2 /* SavedMessagesViewController+TableView.swift */,
+				B058609A2B63D9120016C864 /* InboxViewController */,
+				B058609B2B63D92E0016C864 /* SaveMessagesViewController */,
 			);
 			path = "View Controlers";
 			sourceTree = "<group>";
@@ -445,8 +470,11 @@
 				B0B0824D2B58440800CD4CBF /* SceneDelegate.swift in Sources */,
 				B0B4B8D42B5C5CCF00717263 /* LZViewPagerContent.swift in Sources */,
 				B0DB6F272B5D6A500047DDB5 /* MessageResultFullTableViewCell.swift in Sources */,
-				B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView.swift in Sources */,
+				B0DB6F202B5D04640047DDB5 /* InboxViewController+TableView+extension.swift in Sources */,
+				B05860992B63D8A50016C864 /* InboxViewController+FooterEditor+extension.swift in Sources */,
+				B058609D2B63DA8E0016C864 /* InboxViewController+SQLite+extension.swift in Sources */,
 				B0B4B8D62B5C609D00717263 /* MainViewController.swift in Sources */,
+				B05860972B63D7960016C864 /* InboxViewController+CheckBox+extension.swift in Sources */,
 				B0815B722B60468D00B618E2 /* SavedMessagesViewController+TableView.swift in Sources */,
 				B065B28F2B59231C0047F05B /* InboxViewController.swift in Sources */,
 			);

@@ -20,11 +20,9 @@ extension SavedMessagesViewController: UITableViewDelegate, UITableViewDataSourc
         
         switch savedMessageState {
         case .noResults:
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.noMessageCell, for: indexPath) as! NoMessageTableViewCell
             cell.selectionStyle = .none
             return cell
-            
         case .results:
             if messageSavedViewModel.savedMessages[indexPath.row].fullText {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.messageFullCell, for: indexPath) as! MessageResultFullTableViewCell
@@ -56,10 +54,9 @@ extension SavedMessagesViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch savedMessageState {
-            
+    
         case .noResults:
             return 335
-            
         case .results:
             if messageSavedViewModel.savedMessages[indexPath.row].fullText == true {
                 tableViewCellHeight = calculateCellHeight(title: messageSavedViewModel.savedMessages[indexPath.row].title ?? "", description: messageSavedViewModel.savedMessages[indexPath.row].description ?? "", fullDescriptionCell: true)

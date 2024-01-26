@@ -3,7 +3,7 @@
 
 import UIKit
 
-class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDelegate, CheckBoxDelegate {
+class InboxViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -11,16 +11,14 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
     
     var tableViewCellHeight: CGFloat = 0
     
-     var getMessageViewModel = GetMessageApiViewModel()
+    var getMessageViewModel = GetMessageApiViewModel()
+    var messageSavedViewModel = MessageSavedViewModel()
+    var delegate: BadgeChangeDelegate?
     
-    private var messageSavedViewModel = MessageSavedViewModel()
-    
-     var delegate: BadgeChangeDelegate?
-
     var messageResultState: MessageResultState = .noResults
     
     let footerEditor = FooterEditor()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,63 +27,30 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
         
         let messageShortCellNib = UINib(nibName: "MessageResultShortTableViewCell", bundle: nil)
         tableView.register(messageShortCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.messageShortCell)
-        
         let messageFullCellNib = UINib(nibName: "MessageResultFullTableViewCell", bundle: nil)
         tableView.register(messageFullCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.messageFullCell)
-        
         let noMessageCellNib = UINib(nibName: "NoMessageTableViewCell", bundle: nil)
         tableView.register(noMessageCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.noMessageCell)
-        
         let loadingMessageCellNib = UINib(nibName: "LoadingMessageTableViewCell", bundle: nil)
         tableView.register(loadingMessageCellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingMessageCell)
         
-        getMessagesFromApi()
-        
-        createDatabaseTable()
-        
         footerEditor.delegate = self
+        
+        getMessagesFromApi()
+        createDatabaseTable()
         
         // setup table view long press
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
         tableView.addGestureRecognizer(longPress)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         loadData()
         getMessageViewModel.refreshMessages()
         tableView.reloadData()
     }
     
-    // MARK: - SQLite Database
-    private func loadData() {
-        messageSavedViewModel.loadDataFromSQLiteDatabase()
-
-        getMessageViewModel.messagesData = syncSaveStatus(arr1: getMessageViewModel.messagesData, arr2:  messageSavedViewModel.savedMessages, resetFirstArray: true)
-    }
-    
-    // MARK: - Connect to database and create table.
-    private func createDatabaseTable() {
-        let database = SQLiteDatabase.sharedInstance
-        database.createTable()
-    }
-    
-    // MARK: table view cell delegate
-    func btnSaveTapped(messageItem: MessageItem, index: Int) {
-       
-        // update isSaved property of MessageItem
-        if getMessageViewModel.messagesData[index].isSaved == false {
-            getMessageViewModel.messagesData[index].isSaved = true
-            SQLiteCommands.insertRow(messageItem)
-        } else {
-            getMessageViewModel.messagesData[index].isSaved = false
-            SQLiteCommands.deleteRow(messageId: messageItem.uuid ?? "")
-        }
-        messageSavedViewModel.loadDataFromSQLiteDatabase()
-        tableView.reloadData()
-    }
-    
-     func getMessagesFromApi() {
-        
+    func getMessagesFromApi() {
         messageResultState = .loading
         
         getMessageViewModel.fetchData { [weak self] messages, error in
@@ -107,7 +72,7 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
             
             if let messages {
                 let unreadMessagesCount = messages.filter{ $0.unread ?? false }.count
-           
+                
                 weakSelf.delegate?.passBadgeCount(count: unreadMessagesCount)
                 
                 weakSelf.messageResultState = .results
@@ -118,45 +83,7 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
         }
     }
     
-    // MARK: Footer Editor delegate
-    func didTapDeleteButton() {
-        if getMessageViewModel.removedMessagesArray.count != 0 {
-            getMessageViewModel.removeSelectedElementsFromMessagesArray()
-            tableView.reloadData()
-        } else {
-            alertView(viewController: self, title: "خطا", message: "لطفا حداقل ۱ پیام را انتخاب کنید")
-        }
-        
-    }
-    
-    func didTapCancelButton() {
-        getMessageViewModel.clearSelectedElementsForDelete()
-        tableviewBottomConstaint.constant = 0
-        if getMessageViewModel.messagesData.count > 0 {
-            messageResultState = .results
-            tableView.reloadData()
-        }
-        
-    }
-    
-    // MARK: checkbox delegate
-    func checkBoxTapped(messageItem: MessageItem, checked: Bool, index: Int) {
-        
-        if checked {
-            // add to removedMessagesArray
-            getMessageViewModel.removedMessagesArray.append(messageItem)
-        } else {
-            getMessageViewModel.uncheckSelectedElementForRemove(messageElement: messageItem)
-        }
-        
-        getMessageViewModel.messagesData[index].checked = checked
-        
-        tableView.reloadData()
-        
-    }
-    
     // MARK: Table View long press gesture
-   
     @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             let touchPoint = sender.location(in: tableView)
@@ -172,7 +99,6 @@ class InboxViewController: UIViewController, SaveMessageDelegate, FooterEditorDe
                 }
                 
                 tableView.reloadData()
-                
             }
         }
     }
