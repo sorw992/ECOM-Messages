@@ -9,9 +9,7 @@ class SavedMessagesViewController: UIViewController, SaveMessageDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var savedMessageState: SavedMessageState = .noResults
-    
     var messageSavedViewModel = MessageSavedViewModel()
-    
     var tableViewCellHeight: CGFloat = 0
 
     // MARK: - SQLite Database

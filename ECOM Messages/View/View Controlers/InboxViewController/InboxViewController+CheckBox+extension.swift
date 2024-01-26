@@ -3,7 +3,6 @@
 
 import UIKit
 
-
 extension InboxViewController: CheckBoxDelegate {
     
     // MARK: checkbox delegate
@@ -21,6 +20,4 @@ extension InboxViewController: CheckBoxDelegate {
         tableView.reloadData()
         
     }
-    
-    
 }

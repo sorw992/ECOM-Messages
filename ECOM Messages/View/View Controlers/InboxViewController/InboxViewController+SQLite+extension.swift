@@ -1,14 +1,10 @@
 //
-//  InboxViewController.swift
-//  ECOM Messages
-//
 //  Created by Soroush on 1/18/24.
 
 import UIKit
 
 
 extension InboxViewController: SaveMessageDelegate {
-    
     
     // MARK: - SQLite Database
     func loadData() {
@@ -37,5 +33,4 @@ extension InboxViewController: SaveMessageDelegate {
         messageSavedViewModel.loadDataFromSQLiteDatabase()
         tableView.reloadData()
     }
-    
 }

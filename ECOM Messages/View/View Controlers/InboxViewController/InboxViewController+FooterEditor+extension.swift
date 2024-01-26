@@ -16,7 +16,6 @@ extension InboxViewController: FooterEditorDelegate {
         } else {
             alertView(viewController: self, title: "خطا", message: "لطفا حداقل ۱ پیام را انتخاب کنید")
         }
-        
     }
     
     func didTapCancelButton() {
@@ -28,6 +27,4 @@ extension InboxViewController: FooterEditorDelegate {
         }
         
     }
-    
-    
 }

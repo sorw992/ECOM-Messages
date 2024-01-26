@@ -1,9 +1,3 @@
-//
-//  InboxViewController.swift
-//  ECOM Messages
-//
-//  Created by Soroush on 1/18/24.
-
 import UIKit
 
 extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
@@ -11,13 +5,10 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch messageResultState {
-            
         case .noResults:
             return 1
-            
         case .loading:
             return 1
-            
         case .results:
             return getMessageViewModel.messagesData.count
         case .editMode:

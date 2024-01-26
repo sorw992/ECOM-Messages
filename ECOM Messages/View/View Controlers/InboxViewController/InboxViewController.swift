@@ -66,17 +66,13 @@ class InboxViewController: UIViewController {
                     
                     self?.tableView.reloadData()
                 }
-                
                 return
             }
             
             if let messages {
                 let unreadMessagesCount = messages.filter{ $0.unread ?? false }.count
-                
                 weakSelf.delegate?.passBadgeCount(count: unreadMessagesCount)
-                
                 weakSelf.messageResultState = .results
-                
                 weakSelf.tableView.reloadData()
                 //self?.saveListItems()
             }
@@ -89,15 +85,11 @@ class InboxViewController: UIViewController {
             let touchPoint = sender.location(in: tableView)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 
-                print("long press")
-                
-                
                 if getMessageViewModel.messagesData.count > 0 {
                     messageResultState = .editMode
                     tableviewBottomConstaint.constant = 50
                     self.footerEditor.setupFooterEditor(view: self.view, navigationTitleText: "پیام های من")
                 }
-                
                 tableView.reloadData()
             }
         }
